@@ -7,10 +7,32 @@ import { connect } from 'react-redux'; // This is the glue that connects react t
 import { selectCard } from '../actions/action_selectCard.js'; // our select card action
 import { bindActionCreators } from 'redux'; // allows our action to flow through our reducers
 
+import plasmaBowman from '../assets/PlasmaBowman.png';
+import atlasDrill from '../assets/AtlasDrill.png';
+import omnigoScrapper from '../assets/OmnigoScrapper.png';
+import roserootVertebrate from '../assets/RoserootVertebrate.png';
+
 
 class CardList extends Component {
     
     renderList() {
+
+        const imageMap = {
+            "Plasma Bowman": {
+                image: plasmaBowman
+            },
+            "Atlas Drill": {
+                image: atlasDrill
+            },
+            "Omnigo Scrapper": {
+                image: omnigoScrapper
+            },
+            "Roseroot Vertebrate": {
+                image: roserootVertebrate
+            }
+            
+        }
+
         return this.props.cards.map((card) => {
             return (
                 <li 
@@ -18,8 +40,8 @@ class CardList extends Component {
                     // onClick={() => console.log("// Card Name: " + card.name + " // Damage: " + card.damage)}
                     onClick={() => this.props.selectCard(card)}
                     className='list-group-item card-list'>
-    
-                    {card.name}
+                    <img height="50%" width="50%" src={imageMap[card.name].image }/>
+                    
                 </li>
             );
         });
@@ -29,7 +51,7 @@ class CardList extends Component {
     render() {
         return (
             
-            <ul className='list-group col-sm-4'>
+            <ul className='list-group col-sm-3'>
                 {this.renderList()}
             </ul>
         )

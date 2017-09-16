@@ -3,6 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import bgVideo from './assets/Background_08.mp4';              // Background Video
 import CardList from './containers/container_CardList'; // CardList component
+
+
+
+
 // import {Deck} from './Deck'
 
 //

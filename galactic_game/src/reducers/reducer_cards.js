@@ -11,15 +11,11 @@ export default function () {
             damage: 0, 
         },  
         { 
-            name: 'Nuke',               // 2
+            name: 'Omnigo Scrapper',               // 2
             damage: 1, 
-        },              
-        { 
-            name: 'Starburst',          // 3
-            damage: 8, 
-        },         
+        },                     
         {
-            name: 'Atlas Drill',        // 4
+            name: 'Atlas Drill',        // 3
             damage: 3, 
         }          
     ];
