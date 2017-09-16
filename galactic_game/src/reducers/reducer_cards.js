@@ -7,7 +7,7 @@ export default function () {
             damage: 2, 
         },      
         { 
-            name: 'Rosery Vertebrate',  // 1
+            name: 'Roseroot Vertebrate',  // 1
             damage: 0, 
         },  
         { 

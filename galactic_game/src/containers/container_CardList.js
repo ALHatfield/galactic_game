@@ -17,7 +17,7 @@ class CardList extends Component {
                     key={card.name}
                     // onClick={() => console.log("// Card Name: " + card.name + " // Damage: " + card.damage)}
                     onClick={() => this.props.selectCard(card)}
-                    className='list-group-item'>
+                    className='list-group-item card-list'>
     
                     {card.name}
                 </li>
@@ -30,7 +30,6 @@ class CardList extends Component {
         return (
             
             <ul className='list-group col-sm-4'>
-                {console.log(this)}
                 {this.renderList()}
             </ul>
         )

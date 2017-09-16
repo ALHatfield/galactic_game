@@ -12,6 +12,7 @@
   height: 150px;
   padding: 20px;
   color: white;
+  z-index: 100;
 }
 
 .App-intro {
@@ -21,4 +22,33 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.card-list {
+  color: white;
+  background-color: grey;
+}
+
+#bgvid {
+    position: absolute;
+    top: 50%;
+    left: 50%; /* fixed to left. Replace it by right if you want.*/
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.out-video {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+}
+  
+.white-text {
+  color:white;
 }
