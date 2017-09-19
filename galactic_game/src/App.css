@@ -41,6 +41,20 @@
     z-index: -100;
 }
 
+#bg-image {
+  position: absolute;
+  top: 50%;
+  left: 50%; /* fixed to left. Replace it by right if you want.*/
+  transform: translate(-50%, -50%);
+  /* min-width: 100%;
+  min-height: 100%; */
+  /* -webkit-background-size: cover; */
+  /* -moz-background-size: cover; */
+  /* -o-background-size: cover; */
+  /* background-size: cover; */
+  z-index: -100;
+}
+
 .out-video {
   position: fixed;
   top: 0;

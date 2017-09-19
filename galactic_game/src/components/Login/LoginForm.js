@@ -5,6 +5,7 @@ import validateInput from './loginValidation';
 import {connect} from 'react-redux';
 import {login} from './loginAction';
 import {PropTypes} from "prop-types";
+import bgEarthHorizon from '../../assets/bg_earth_horizon.png';
 
 class LoginForm extends React.Component {
     constructor(props){
@@ -52,7 +53,10 @@ class LoginForm extends React.Component {
         const {errors, email, password, isLoading} = this.state;
         return (
           <div>
-          {this.state.Redirect ? <Redirect to="/" /> :
+            
+            <img id='bg-image' height='100%'  width='100%' src={bgEarthHorizon}/>            
+            
+            {this.state.Redirect ? <Redirect to="/" /> :
             <form onSubmit={this.onSubmit}>
                 <h1>Login.</h1>
 
