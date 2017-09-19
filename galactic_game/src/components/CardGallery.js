@@ -22,7 +22,7 @@ import Navbar from "./Navbar/Navbar";
 // }
 // //
 
-class Game extends Component {
+class CardGallery extends Component {
 
   // static final _Deck = Deck;
 
@@ -58,5 +58,5 @@ class Game extends Component {
   }
 }
 
-export default Game;
+export default CardGallery;
 

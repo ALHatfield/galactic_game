@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {connect} from "react-redux";
 import { logout } from "../common/authAction";
 import {PropTypes} from "prop-types";
+import logo_galatic_struggle from '../../assets/logo_galatic_struggle.gif';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -21,10 +22,14 @@ class Navbar extends React.Component {
       <nav className="navbar navbar-inverse">
         <div className="container-fluid">
           <div className="navbar-header">
-            <Link className="navbar-brand" to="/">Galatic Struggle</Link>
+            
+            <Link className="navbar-brand" to="/">
+              <img height="50px" className="" src={logo_galatic_struggle}/>
+            </Link>
           </div>
           <ul className="nav navbar-nav">
            <li><Link to="/home">Home</Link></li>
+            <li><Link to="/cardgallery">Card Gallery</Link></li>
             <li><Link to="/game">Game</Link></li>
             <li><Link to="/page2">Page 2</Link></li>
           </ul>

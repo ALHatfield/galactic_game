@@ -9,8 +9,9 @@ import SignupPage from "./components/Signup/SignupPage";
 import LoginPage from "./components/Login/LoginPage";
 import Navbar from "./components/Navbar/Navbar";
 import Rules from "./components/Rules";
-import Game from "./components/Game";
+import CardGallery from "./components/CardGallery";
 import Footer from "./components/Footer/Footer";
+
 
 //Base outlet
 const Greetings = () => (
@@ -35,7 +36,7 @@ class App extends React.Component {
           />
           <Route exact path="/" component= {Greetings} />
           <Route path="/rules" component={Rules} />
-          <Route path="/game" component={Game} />
+          <Route path="/cardgallery" component={CardGallery} />
           <Route path="/signup" component={SignupPage} />
           <Route path="/login" component={LoginPage} />
           <Greetings />
