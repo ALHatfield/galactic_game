@@ -5,11 +5,13 @@
 
 import { combineReducers } from 'redux';
 import CardsReducer from './reducer_cards'; // contains the list of cards
+import ActiveCard from './reducer_active_card'
 
 const rootReducer = combineReducers({
 
     //key = [{name: Plasma Bowman}, {name: Rosery Vertebrate}, {name: Nuke}, ...]
-    cards: CardsReducer
+    cards: CardsReducer,
+    activeCard: ActiveCard
 });
 
 

@@ -7,10 +7,10 @@
 // 5. this file reads CARD_SELECTED and returns action.payload (card)
 
 
-export default function(action, state={}) { 
-    switch(action.type) {                   //
-        case 'CARD_SELECTED':               // if (action.type === 'CARD_SELECTED') // TRUE
-            const {payload} = action; // const payload = action.payload;
+export default function(state = null, action) { 
+    switch(action.type) {                                           //
+        case 'CARD_SELECTED':                                       // if (action.type === 'CARD_SELECTED') // TRUE
+            const {payload} = action;                               // const payload = action.payload;
             return Object.assign({}, state, {selectCard: payload})
         default:
             return state

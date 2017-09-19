@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import bgVideo from './assets/Background_08.mp4';              // Background Video
 import CardList from './containers/container_CardList'; // CardList component
+import CardDetail from './containers/container_CardDetail';
 
 
 
@@ -47,8 +48,9 @@ class App extends Component {
             </source>
           </video>
 
-          <div>
+          <div className='row'>
             <CardList />
+            <CardDetail />
           </div>
 
         </div>  
