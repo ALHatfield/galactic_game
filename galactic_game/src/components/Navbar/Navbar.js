@@ -7,7 +7,7 @@ import {PropTypes} from "prop-types";
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
-    //this.logout = this.logout.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
   logout(e) {
@@ -15,19 +15,7 @@ class Navbar extends React.Component {
     this.props.logout();
   }
   render() {
-    // const isAuthenticated = this.props.auth;
-    // const userLinks = (
-    //     <ul className="nav navbar-nav navbar-right">
-    //       <li><a href="/logout" onClick={this.logout}>Logout</a></li>
-    //     </ul>
-    //   );
-
-    // const guestLinks = (
-    //   <ul className="nav navbar-nav navbar-right">
-    //       <li><Link to="/signup"><span className="glyphicon glyphicon-user"></span> Sign Up</Link></li>
-    //       <li><Link to="/login"><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
-    //   </ul>
-    //   );
+   
 
     return (
 
@@ -38,7 +26,7 @@ class Navbar extends React.Component {
           </div>
           <ul className="nav navbar-nav">
             <li className="active"><a href="#">Home</a></li>
-            <li><Link to="/pag1">Page 1</Link></li>
+            <li><Link to="/game">Game</Link></li>
             <li><Link to="/page2">Page 2</Link></li>
           </ul>
           <ul className="nav navbar-nav navbar-right">
