@@ -1,5 +1,8 @@
 export function selectCard(card) {
-    console.log('A Card has been selected: ' + card.name + ' // damage: ' + card.damage);
+    console.log('Triggering: /src/actions/action_selectCard')
+    console.log('Card Name: ' + card.name);
+    console.log('Card Damage: ' + card.damage);
+    console.log('==================================================================');
     return {
         type: 'CARD_SELECTED',
         payload: card

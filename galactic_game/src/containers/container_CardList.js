@@ -17,6 +17,7 @@ class CardList extends Component {
     
     renderList() {
 
+        // card images
         const imageMap = {
             "Plasma Bowman": {
                 image: plasmaBowman
@@ -30,17 +31,17 @@ class CardList extends Component {
             "Roseroot Vertebrate": {
                 image: roserootVertebrate
             }
-            
         }
 
+        // Generating the list of cards
         return this.props.cards.map((card) => {
             return (
                 <li 
                     key={card.name}
                     // onClick={() => console.log("// Card Name: " + card.name + " // Damage: " + card.damage)}
                     onClick={() => this.props.selectCard(card)}
-                    className='list-group-item card-list'>
-                    <img height="50%" width="50%" src={imageMap[card.name].image }/>
+                    className=''>
+                    <img height="50%" width="50%" alt="" src={imageMap[card.name].image }/>
                     
                 </li>
             );
@@ -50,12 +51,10 @@ class CardList extends Component {
     // Renders the list
     render() {
         return (
-            
             <ul className='list-group col-sm-3'>
                 {this.renderList()}
             </ul>
         )
-
     }
 }
 

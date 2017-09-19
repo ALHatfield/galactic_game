@@ -38,6 +38,7 @@
     min-height: 100%;
     width: auto;
     height: auto;
+    z-index: -100;
 }
 
 .out-video {
@@ -51,4 +52,20 @@
   
 .white-text {
   color:white;
+}
+
+.card-detail-default {
+  color: white;
+  font-size: 40px;
+
+}
+
+.card-detail-card-name {
+  font-size: 40px;
+  color: white;
+}
+
+.card-detail-card-damage {
+  font-size: 30px;
+  color: white;
 }
