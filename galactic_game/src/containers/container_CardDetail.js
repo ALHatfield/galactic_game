@@ -24,6 +24,7 @@ class CardDetail extends Component {
 
             <div className='card-detail-card-name'>{this.props.card.selectCard.name}</div>
             <div className='card-detail-card-damage'>Damage: {this.props.card.selectCard.damage}</div>
+            {/*<img src={this.props.card.selectCard.image}>*/}
         </div>
         )
     }

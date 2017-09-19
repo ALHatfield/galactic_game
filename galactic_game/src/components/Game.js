@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import logo from '../logo.svg';
 import '../App.css';
 import bgVideo from '../assets/Background_08.mp4';              // Background Video
-import CardList from '../containers/container_CardList'; // CardList component
 
+import CardList from '../containers/container_CardList'; // CardList component
 import CardDetail from '../containers/container_CardDetail';
+import Navbar from "./Navbar/Navbar";
 
 // import {Deck} from './Deck'
 
@@ -36,10 +37,11 @@ class Game extends Component {
       
         <div className="out-video">
 
-          <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to React</h2>
+          
+          <div>
+            <Navbar />
           </div>
+          
         
           <video autoPlay={true} loop id="bgvid" width="100%" height="100%">
             <source src={ bgVideo } type="video/mp4">  
