@@ -13,22 +13,13 @@ import Game from "./components/Game";
 import Footer from "./components/Footer/Footer";
 
 //Base outlet
-// const Greetings = () => (
-//       <div className="App">
-//       <Navbar />
-//         <div className="out-video">
-//           <div className="App-header">
-//             <h2>Welcome to Galactic Battle!</h2>
-//           </div>
-//           <video autoPlay={true} loop id="bgvid" width="100%" height="100%">
-//             <source src={ bgVideo } type="video/mp4"></source>
-//           </video>
-//           <div>
-//             <CardList />
-//           </div>
-//         </div>  
-//       </div>
-//       )
+const Greetings = () => (
+          <div className="row">
+            <div className="col-md-4 col-md-offset-4">
+              <h1> Welcome to Galactic Battle field! </h1>
+            </div>
+          </div>
+      )
 
 class App extends React.Component {
   render() {
@@ -42,10 +33,12 @@ class App extends React.Component {
             </div>
           )}
           />
+          <Route exact path="/" component= {Greetings} />
           <Route path="/rules" component={Rules} />
           <Route path="/game" component={Game} />
           <Route path="/signup" component={SignupPage} />
           <Route path="/login" component={LoginPage} />
+          <Greetings />
           <Footer />
         </div>
       </BrowserRouter>
