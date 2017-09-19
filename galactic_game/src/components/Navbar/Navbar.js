@@ -14,18 +14,17 @@ class Navbar extends React.Component {
     e.preventDefault();
     this.props.logout();
   }
+
+
   render() {
-   
-
     return (
-
       <nav className="navbar navbar-inverse">
         <div className="container-fluid">
           <div className="navbar-header">
             <Link className="navbar-brand" to="/">Galatic Struggle</Link>
           </div>
           <ul className="nav navbar-nav">
-            <li className="active"><a href="#">Home</a></li>
+           <li><Link to="/home">Home</Link></li>
             <li><Link to="/game">Game</Link></li>
             <li><Link to="/page2">Page 2</Link></li>
           </ul>
@@ -45,8 +44,8 @@ class Navbar extends React.Component {
 }
 
 Navbar.propTypes = {
-  auth: PropTypes.object.isRequired,
-  logout: PropTypes.func.isRequired
+  auth: PropTypes.object,
+  logout: PropTypes.func
 }
 
 const mapStateToProps = (state) => ({
