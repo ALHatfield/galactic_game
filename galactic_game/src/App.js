@@ -1,10 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import bgVideo from './assets/Background_08.mp4';              // Background Video
-import CardList from './containers/container_CardList'; // CardList component
 import {BrowserRouter, Route} from "react-router-dom";
-import Base from "./components/Base";
+
 import SignupPage from "./components/Signup/SignupPage";
 import LoginPage from "./components/Login/LoginPage";
 import Navbar from "./components/Navbar/Navbar";

@@ -54,7 +54,7 @@ class LoginForm extends React.Component {
         return (
           <div>
             
-            <img id='bg-image' height='100%'  width='100%' src={bgEarthHorizon}/>            
+            <img id='bg-image' height='100%'  width='100%' alt="" src={bgEarthHorizon}/>            
             
             {this.state.Redirect ? <Redirect to="/" /> :
             <form onSubmit={this.onSubmit}>

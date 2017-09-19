@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import logo from '../logo.svg';
+
 import '../App.css';
 import bgVideo from '../assets/Background_08.mp4';              // Background Video
 

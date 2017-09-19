@@ -24,7 +24,7 @@ class Navbar extends React.Component {
           <div className="navbar-header">
             
             <Link className="navbar-brand" to="/">
-              <img height="50px" className="" src={logo_galatic_struggle}/>
+              <img height="50px" className="" alt="" src={logo_galatic_struggle}/>
             </Link>
           </div>
           <ul className="nav navbar-nav">
