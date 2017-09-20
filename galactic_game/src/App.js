@@ -36,7 +36,6 @@ class App extends React.Component {
           <Route path="/cardgallery" component={CardGallery} />
           <Route path="/signup" component={SignupPage} />
           <Route path="/login" component={LoginPage} />
-          <Greetings />
           <Footer />
         </div>
       </BrowserRouter>
