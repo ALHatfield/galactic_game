@@ -3,7 +3,7 @@ import {Redirect} from "react-router-dom";
 import TextFieldInput from '../common/TextFieldInput';
 import validateInput from './loginValidation';
 import {connect} from 'react-redux';
-import {login} from './loginAction';
+import login from './loginAction';
 import {PropTypes} from "prop-types";
 import bgEarthHorizon from '../../assets/bg_earth_horizon.png';
 
@@ -21,7 +21,7 @@ class LoginForm extends React.Component {
         this.onSubmit = this.onSubmit.bind(this);
         this.onChange = this.onChange.bind(this);
     }
-
+//validate user using validateInput file
     isValid(){
         const {errors, isValid} = validateInput(this.state);
 
@@ -30,10 +30,10 @@ class LoginForm extends React.Component {
         }
         return isValid;
     }
-
+//submit user request
     onSubmit(e){
         e.preventDefault();
-
+//valid user will log
         if(this.isValid()){
             console.log('data is valid');
             this.setState({ errors: {}, isLoading: true});

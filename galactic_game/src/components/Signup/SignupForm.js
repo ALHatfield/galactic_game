@@ -2,7 +2,8 @@ import React from "react";
 import {PropTypes} from "prop-types";
 import {Redirect} from "react-router";
 import {connect} from "react-redux";
-import {userSignupRequest, isUserExists} from "./signupAction";
+import userSignupRequest from "./signupAction";
+import isUserExists from './isUser';
 import addMessage from "../common/flashMessage";
 import TextFieldInput from "../common/TextFieldInput";
 import validateInput from "./signupValidation";
@@ -29,7 +30,7 @@ class SignupForm extends React.Component {
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
-
+//Validate user input using validateInput file
   isValid() {
     const { errors, isValid} = validateInput(this.state);
 
@@ -38,11 +39,11 @@ class SignupForm extends React.Component {
     }
     return isValid;
   }
-
+//submit user signup request
   onSubmit(e) {
     e.preventDefault();
     console.log(this.state);
-
+//axios will take care of valid request in userSignupRequest file
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
       this.props.userSignupRequest(this.state).then(
@@ -58,7 +59,7 @@ class SignupForm extends React.Component {
     }
     //axios.post("/api/users", {user: this.state});
   }
-
+//check current user
   checkUserExists(e) {
     const { name, value } = e.target;
     if(value) {
