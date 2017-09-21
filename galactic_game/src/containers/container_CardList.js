@@ -18,9 +18,10 @@ class ImageMzp {
     }
 }
 
+
 class CardList extends Component {
 
-
+    
     renderList() {
 
         
@@ -29,10 +30,9 @@ class CardList extends Component {
             return (
                 <li 
                     key={card.name}
-                    key={card.index}
                     // onClick={() => console.log("// Card Name: " + card.name + " // Damage: " + card.damage)}
                     onClick={() => this.props.selectCard(card)}
-                    onMouseEnter={() => console.log("mouse enter")}>
+                    onMouseEnter={() => console.log('mouse hover')}>
 
                     <img height="50%" width="50%" alt="" src={card.image}/>
                 </li>

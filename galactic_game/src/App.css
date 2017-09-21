@@ -89,7 +89,7 @@
 }
 
 /* ============================  */
-.hover {
+/* .hover {
   position: relative;
 
   &:hover &__no-hover {
@@ -109,4 +109,8 @@
   &__no-hover {
     opacity: 1;
   }
+} */
+
+img:hover {
+  opacity: 0.3;
 }
