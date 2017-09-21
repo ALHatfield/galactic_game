@@ -10,39 +10,31 @@ import { bindActionCreators } from 'redux'; // allows our action to flow through
 import plasmaBowman from '../assets/PlasmaBowman.png';
 import atlasDrill from '../assets/AtlasDrill.png';
 import omnigoScrapper from '../assets/OmnigoScrapper.png';
-import roserootVertebrate from '../assets/RoserootVertebrate.png';
+import roserootVertebrate from '../assets/RoserootVertebrate.png'; // ../assets/RoserootVertebrate.png
 
+class ImageMzp {
+    constructor () {
+        
+    }
+}
 
 class CardList extends Component {
-    
+
+
     renderList() {
 
-        // card images
-        const imageMap = {
-            "Plasma Bowman": {
-                image: plasmaBowman
-            },
-            "Atlas Drill": {
-                image: atlasDrill
-            },
-            "Omnigo Scrapper": {
-                image: omnigoScrapper
-            },
-            "Roseroot Vertebrate": {
-                image: roserootVertebrate
-            }
-        }
-
+        
         // Generating the list of cards
         return this.props.cards.map((card) => {
             return (
                 <li 
                     key={card.name}
+                    key={card.index}
                     // onClick={() => console.log("// Card Name: " + card.name + " // Damage: " + card.damage)}
                     onClick={() => this.props.selectCard(card)}
-                    className=''>
-                    <img height="50%" width="50%" alt="" src={imageMap[card.name].image }/>
-                    
+                    onMouseEnter={() => console.log("mouse enter")}>
+
+                    <img height="50%" width="50%" alt="" src={card.image}/>
                 </li>
             );
         });
