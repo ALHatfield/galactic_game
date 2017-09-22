@@ -1,5 +1,5 @@
 import Validator from 'validator';
-import isEmpty from 'lodash/isEmpty';
+import isEmpty from 'lodash';
 
 export default function validateInput(data){
     let errors = {};
@@ -16,4 +16,5 @@ export default function validateInput(data){
         isValid: isEmpty(errors)
     }
 }
+
 

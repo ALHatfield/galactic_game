@@ -6,6 +6,7 @@
     "axios": "^0.16.2",
     "classnames": "^2.2.5",
     "jwt-decode": "^2.2.0",
+    "lodash": "^4.17.4",
     "material-ui": "^0.19.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
