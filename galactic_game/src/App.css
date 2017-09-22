@@ -111,6 +111,7 @@
   }
 } */
 
-img:hover {
+.expand-on-hover:hover {
   opacity: 0.3;
+  width: 60%;
 }

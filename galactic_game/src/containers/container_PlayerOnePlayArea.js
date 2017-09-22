@@ -8,14 +8,14 @@ class PlayerOnePlayArea extends Component {
         
         return (
         <div className='card-detail'>
-            {console.log("selected card:")}
-            {console.log(this)}
+            {console.log("card:")}
+            {console.log(this.props.card)}
             {console.log("===================")}
 
             
-
-
             
+
+
         </div>
         )
     }
@@ -26,7 +26,7 @@ function mapStateToProps(state) {
     // What ever is returned will show up as props inside of CardList
     return {
         // this is what took me a weekend to figure out...
-        card: state.activeCard
+        card: state.playerOneHandSelectedCard
     };
 }
 

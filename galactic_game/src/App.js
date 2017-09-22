@@ -9,15 +9,10 @@ import Rules from "./components/Rules";
 import CardGallery from "./components/CardGallery";
 import Footer from "./components/Footer/Footer";
 import LandingPage from "./components/landingPage";
+import GameBoard from "./components/GameBoard";
 
 //Base outlet
-const Greetings = () => (
-          <div className="row">
-            <div className="col-md-4 col-md-offset-4">
-              <h1> Welcome to Galactic Battle field! </h1>
-            </div>
-          </div>
-      )
+
 
 class App extends React.Component {
   render() {
@@ -36,7 +31,8 @@ class App extends React.Component {
           <Route path="/cardgallery" component={CardGallery} />
           <Route path="/signup" component={SignupPage} />
           <Route path="/login" component={LoginPage} />
-          <Greetings />
+          <Route path="/game" component={GameBoard} />
+          
           <Footer />
         </div>
       </BrowserRouter>
