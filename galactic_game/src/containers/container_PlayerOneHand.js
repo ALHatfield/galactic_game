@@ -3,9 +3,11 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux'; // This is the glue that connects react to redux
-
-import { selectCard } from '../actions/action_selectCard.js'; // our select card action
 import { bindActionCreators } from 'redux'; // allows our action to flow through our reducers
+import { playerOneHandSelectCard } from '../actions/action_PlayerOneHandSelectCard.js'; // imports our action
+
+
+
 
 
 // // =========================================== // //
@@ -26,14 +28,14 @@ import { bindActionCreators } from 'redux'; // allows our action to flow through
 // }
 
 
-class CardList extends Component {
+class PlayerOneHand extends Component {
 
     
     renderList() {
         // console.log("======CARD LIST RANDOMIZE=============")
         
         // this.props.cards.shuffle();
-        // console.log(this.props.cards)
+    
 
         // Generating the list of cards
         return this.props.cards.map((card) => {
@@ -41,9 +43,10 @@ class CardList extends Component {
                 
                 <li 
                     key={card.name} // unique ID
-                    onClick={() => this.props.selectCard(card)} //action_SelectCard
+                    // onClick={() => this.props.selectCard(card)} //action_SelectCard
+                    onClick={() => this.props.playerOneHandSelectCard(card)}
                     onMouseEnter={() => console.log('mouse hover')}> 
-
+            
                     <img className="expand-on-hover" height="50%" width="50%" alt="" src={card.image}/>
                 </li>
                 
@@ -54,7 +57,6 @@ class CardList extends Component {
     // Renders the list
     render() {
         return (
-            
             <ul className='list-group col-sm-3'>
                 {this.renderList()}
             </ul>
@@ -70,16 +72,20 @@ function mapStateToProps(state) {
     };
 }
 
-// Anthing returned from this function (dispatch) will end up as props on the cardList container
-function mapDispatchToProps(dispatch) {
-    // Whenever selectCard is called, the result should be passed to all our reducers.
-    // The select Card action gets passed to the dispatch function
-    return bindActionCreators({ selectCard: selectCard }, dispatch)
-}
+// // Anthing returned from this function (dispatch) will end up as props on the cardList container
+// function mapDispatchToProps(dispatch) {
+//     // Whenever selectCard is called, the result should be passed to all our reducers.
+//     // The select Card action gets passed to the dispatch function
+//     return bindActionCreators({ selectCard: selectCard }, dispatch)
+// }
 
+function mapDispatchToProps(dispatch) {
+   
+    return bindActionCreators({ playerOneHandSelectCard: playerOneHandSelectCard }, dispatch)
+}
 
 
 // The CONNECT function takes a FUNCTION and a COMPONENT and produces a container.
 // The container is component that is aware of the state that is contained by redux.
 // All functions maping data to props needs to be plugged into this connect function.
-export default connect(mapStateToProps, mapDispatchToProps)(CardList);
+export default connect(mapStateToProps, mapDispatchToProps)(PlayerOneHand);
