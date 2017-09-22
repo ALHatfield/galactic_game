@@ -4,7 +4,9 @@ import '../App.css';
 import bgVideo from '../assets/Background_08.mp4';              // Background Video
 
 import PlayerOneHand from '../containers/container_PlayerOneHand'; // CardList component
-import PlayerOnePlayArea from '../containers/container_PlayerOnePlayArea';
+import PlayerOnePlayArea from '../components/component_PlayerOnePlayArea';
+import CardInformation from '../containers/container_CardInformation'; // ~~~~~~~~~~~~~~~~~~~~~CHANGE THIS TO CARD INFO CONTAINER ######################################
+import CardImageInformation from '../containers/container_CardImageInformation';
 import Navbar from "./Navbar/Navbar";
 
 // import {Deck} from './Deck'
@@ -21,6 +23,27 @@ import Navbar from "./Navbar/Navbar";
 //   // return n ew state
 // }
 // //
+
+// // =========================================== // //
+// //     CLAUDIO'S JUNGLE JUICE FUNCTION         // //
+// // =========================================== // //
+// Array.prototype.shuffle = function() {
+//     var i = this.length,
+//             j,
+//             temp;
+
+//     while (--i > 0) {
+//         j = Math.floor(Math.random()*(i + 1));
+//         temp = this[j];
+//         this[j] = this[i];
+//         this[i] = temp;
+//     }
+//     return this;
+// }
+
+// renderList() {
+  // this.props.cards.shuffle();
+// }
 
 class GameBoard extends Component {
 
@@ -49,10 +72,18 @@ class GameBoard extends Component {
           </video>
 
           <div className='row'>
-            <PlayerOneHand />
+            <CardImageInformation />
+            <CardInformation /> 
+          </div>
+          
+          <br style={{"color":"white", "height":"22px"}}/> 
+
+          <div className='row'>
+            <PlayerOneHand />       
             <PlayerOnePlayArea />
             
           </div>
+          
         </div>  
       </div>
     );
