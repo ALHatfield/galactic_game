@@ -8,29 +8,14 @@ class CardInformation extends Component {
     render() {
         if (!this.props.card) {
             return (
-                <div className='card-detail-default'>
-                    Select a card from your hand
-                    {console.log("container_CardInformation.js cannot find 'this.props.card'")}
-                    {console.log(this)} 
-                    {console.log("=====================================")}
-                </div>
+                <div></div>
             )
         }
 
         return (
         <div className='card-information row'>
-                       
-
-            <ul>
-                <li className="card-detail-card-name">{this.props.card.cardInformation.name}</li>
-                <li className="card-detail-card-name">damage: {this.props.card.cardInformation.damage}</li>
-            </ul>
-                
-        
-
-
-
-                
+            <img width="3%" src={this.props.card.cardInformation.image}/>
+            
         </div>
         )
     }

@@ -5,6 +5,7 @@ import bgVideo from '../assets/Background_08.mp4';              // Background Vi
 
 import PlayerOneHand from '../containers/container_PlayerOneHand'; // CardList component
 import CardInformation from '../containers/container_CardInformation'; // ~~~~~~~~~~~~~~~~~~~~~CHANGE THIS TO CARD INFO CONTAINER ######################################
+import CardImageInformation from '../containers/container_CardImageInformation';
 import Navbar from "./Navbar/Navbar";
 
 // import {Deck} from './Deck'
@@ -70,9 +71,10 @@ class GameBoard extends Component {
           </video>
 
           <div className='row'>
+            <CardImageInformation />
             <CardInformation /> 
           </div>
-          
+
           <div className='row'>
             <PlayerOneHand />            
           </div>
