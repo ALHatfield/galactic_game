@@ -88,30 +88,12 @@
   height: 50px;
 }
 
-/* ============================  */
-/* .hover {
-  position: relative;
-
-  &:hover &__no-hover {
-    opacity: 0;
-  }
-
-  &:hover &__hover {
-    opacity: 1;
-  }
-
-  &__hover {
-    position: absolute;
-    top: 0;
-    opacity: 0;
-  }
-
-  &__no-hover {
-    opacity: 1;
-  }
-} */
 
 .expand-on-hover:hover {
   opacity: 0.3;
   width: 60%;
+}
+.hi {
+  opacity: 50%;
+  border: 3px solid purple;
 }

@@ -25,6 +25,8 @@ class CardInformation extends Component {
                 <li className="card-detail-card-name">{this.props.card.cardInformation.name}</li>
                 <li className="card-detail-card-name">damage: {this.props.card.cardInformation.damage}</li>
             </ul>
+
+            
                 
         
 

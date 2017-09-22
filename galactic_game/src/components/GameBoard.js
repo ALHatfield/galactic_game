@@ -4,6 +4,7 @@ import '../App.css';
 import bgVideo from '../assets/Background_08.mp4';              // Background Video
 
 import PlayerOneHand from '../containers/container_PlayerOneHand'; // CardList component
+import PlayerOnePlayArea from '../components/component_PlayerOnePlayArea';
 import CardInformation from '../containers/container_CardInformation'; // ~~~~~~~~~~~~~~~~~~~~~CHANGE THIS TO CARD INFO CONTAINER ######################################
 import CardImageInformation from '../containers/container_CardImageInformation';
 import Navbar from "./Navbar/Navbar";
@@ -74,9 +75,13 @@ class GameBoard extends Component {
             <CardImageInformation />
             <CardInformation /> 
           </div>
+          
+          <br style={{"color":"white", "height":"22px"}}/> 
 
           <div className='row'>
-            <PlayerOneHand />            
+            <PlayerOneHand />       
+            <PlayerOnePlayArea />
+            
           </div>
           
         </div>  
