@@ -6,7 +6,7 @@ export default function () {
             name: 'Plasma Bowman',      // 0
             damage: 2,
             health: 15,
-            image: require('../assets/PlasmaBowmanActivation.gif'),
+            image: require('../assets/PlasmaBowman.png'),
         },      
         { 
             name: 'Roseroot Vertebrate',  // 1
