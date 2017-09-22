@@ -8,7 +8,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Rules from "./components/Rules";
 import CardGallery from "./components/CardGallery";
 import Footer from "./components/Footer/Footer";
-
+import LandingPage from "./components/landingPage";
 
 //Base outlet
 const Greetings = () => (
@@ -31,7 +31,7 @@ class App extends React.Component {
             </div>
           )}
           />
-          <Route exact path="/" component= {Greetings} />
+          <Route exact path="/" component= { LandingPage } />
           <Route path="/rules" component={Rules} />
           <Route path="/cardgallery" component={CardGallery} />
           <Route path="/signup" component={SignupPage} />

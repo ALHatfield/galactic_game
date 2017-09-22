@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import bgEarthHorizon from '../assets/bg_earth_horizon.png';
+import bgEarthHorizon from '../assets/bg_earth_orbit_loop.mp4';
 // to do: Create background assets for the parallax
 
 class LandingPage extends Component {
@@ -12,7 +12,10 @@ class LandingPage extends Component {
                 {/* BACKGROUND IMAGE */}
                 <section>
                     <div id="parallax-1" class="parallax">
-                        <div class="title" class="first">{ <img id='bg-image' height='100%'  width='100%' src={bgEarthHorizon}/> }</div>
+                        <div class="title" class="first">{ <video autoPlay={true} loop id="bgvid" width="100%" height="100%">
+            <source src={ bgEarthHorizon } type="video/mp4">  
+            </source>
+          </video> }</div>
                     </div>
                 </section>
         
@@ -22,6 +25,7 @@ class LandingPage extends Component {
                     col-sm-4 col-sm-offset-1
                     col-md-4 col-md-offset-1
                     col-lg-4 col-lg-offset-1">
+                    
 
                         
                         <div class="row content nowrap">	

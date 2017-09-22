@@ -5,22 +5,26 @@ export default function () {
         { 
             name: 'Plasma Bowman',      // 0
             damage: 2,
-            image: 'plasmaBowman' 
+            image: require('../assets/PlasmaBowman.png'),
+            // activeImage: require('../assets/PlasmaBowmanActivation.gif') 
         },      
         { 
             name: 'Roseroot Vertebrate',  // 1
             damage: 0,
-            image: 'atlasDrill' 
+            image: require('../assets/RoserootVertebrate.png'),
+            // activeImage: require('../assets/PlasmaBowmanActivation.gif') 
         },  
         { 
             name: 'Omnigo Scrapper',               // 2
             damage: 1,
-            image: 'omnigoScrapper'
+            image: require('../assets/OmnigoScrapper.png'),
+            // activeImage: require('../assets/PlasmaBowmanActivation.gif') 
         },                     
         {
             name: 'Atlas Drill',        // 3
             damage: 3,
-            image: 'roserootVertebrate' 
+            image: require('../assets/AtlasDrill.png'),
+            // activeImage: require('../assets/PlasmaBowmanActivation.gif') 
         }          
     ];
 }

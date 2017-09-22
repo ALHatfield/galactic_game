@@ -22,8 +22,15 @@ class CardDetail extends Component {
             {console.log(this.props.card)}
             {console.log("===================")}
 
-            <div className='card-detail-card-name'>{this.props.card.selectCard.name}</div>
-            <div className='card-detail-card-damage'>Damage: {this.props.card.selectCard.damage}</div>
+            
+            
+
+            <div className="card-image">
+                <img height="500px" alt="" src={ this.props.card.selectCard.image }></img> 
+                <h2 className='card-detail-card-name'>{this.props.card.selectCard.name}<br />Damage: {this.props.card.selectCard.damage}</h2>
+                
+            </div>
+            
             {/*<img src={this.props.card.selectCard.image}>*/}
         </div>
         )
