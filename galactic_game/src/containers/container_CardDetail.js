@@ -18,7 +18,7 @@ class CardDetail extends Component {
         }
         return (
         <div className='card-detail'>
-            {console.log("selected card:")}
+            {console.log("container_CardDetail.js:")}
             {console.log(this.props.card)}
             {console.log("===================")}
 
