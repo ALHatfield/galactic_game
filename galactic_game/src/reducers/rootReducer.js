@@ -7,13 +7,15 @@ import { combineReducers } from 'redux';
 import CardsReducer from './reducer_cards'; // contains the list of cards
 import ActiveCard from './reducer_active_card';
 import CardInformation from './reducer_PlayerOneHandSelectedCard';
+import PlayerOnePlayAreaCards from './reducer_PlayerOnePlayAreaCards';
 
 const rootReducer = combineReducers({
 
     //key = [{name: Plasma Bowman}, {name: Rosery Vertebrate}, {name: Nuke}, ...]
     cards: CardsReducer,
     activeCard: ActiveCard,
-    cardInformation: CardInformation // ~~~~~~~~~~~~~~~~~~~~~CHANGE THIS TO CARD INFO CONTAINER ######################################
+    cardInformation: CardInformation,
+    playerOnePlayAreaCards: PlayerOnePlayAreaCards
 });
 
 

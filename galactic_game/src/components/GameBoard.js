@@ -9,6 +9,9 @@ import CardInformation from '../containers/container_CardInformation'; // ~~~~~~
 import CardImageInformation from '../containers/container_CardImageInformation';
 import Navbar from "./Navbar/Navbar";
 
+import { connect } from 'react-redux'; // This is the glue that connects react to redux
+
+
 // import {Deck} from './Deck'
 
 //
@@ -46,14 +49,55 @@ import Navbar from "./Navbar/Navbar";
 // }
 
 class GameBoard extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      playerOne_cardsInPlay: []
+    }
+  }
 
-  // static final _Deck = Deck;
 
-  // constructor () {
-  //   App._deck = Deck; // Be careful to never change this
+  // handleClick (event) {
+  //   event.preventDefault();
+
+  //   this.setState({activeCard: this.props.example })
   // }
 
   render() {
+
+    var cardArray = [];
+    // var targetCard = {this.props.card.cardInformation};
+    // var targetCard = {return(this.props.card.cardInformation).bind(this)};
+
+    
+
+    // pushCardsToState() {
+    //   cardArray = cardArray.push(targetCard);
+    //   this.setState = {
+    //     playerOne_cardsInPlay: cardArray
+    //   }
+    // }
+
+    // if statement // Handle undefined
+    if (!this.props.card) {
+      return (
+        <div className="App">
+        <div className="out-video">
+          <div>
+            <Navbar />
+          </div>
+          <video autoPlay={true} loop id="bgvid" width="100%" height="100%">
+            <source src={ bgVideo } type="video/mp4">  
+            </source>
+          </video>
+          <div className='row'>
+            <PlayerOneHand />       
+            <PlayerOnePlayArea />
+          </div>
+        </div>  
+      </div>
+      )
+    }
     return (
       <div className="App">
 
@@ -71,10 +115,10 @@ class GameBoard extends Component {
             </source>
           </video>
 
-          <div className='row'>
-            <CardImageInformation />
-            <CardInformation />             
-            
+          <div className='card-information row'>
+            <li></li>
+            <li className="card-detail-card-name">{this.props.card.cardInformation.name}</li>
+            <li className="card-detail-card-name">damage: {this.props.card.cardInformation.damage}</li>
           </div>
           
           <br style={{"color":"white", "height":"22px"}}/> 
@@ -91,5 +135,17 @@ class GameBoard extends Component {
   }
 }
 
-export default GameBoard;
+
+// mapStateToProps
+//        card: state.cardInformation
+function mapStateToProps(state) {
+  return {
+    card: state.cardInformation,
+
+  }
+}
+
+// connect(mapStateToProps)(cardInformation)
+
+export default connect(mapStateToProps)(GameBoard);
 

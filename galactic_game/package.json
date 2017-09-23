@@ -16,6 +16,7 @@
     "react-scripts": "1.0.13",
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
     "validator": "^8.2.0"
   },
   "scripts": {
