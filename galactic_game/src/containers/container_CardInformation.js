@@ -10,9 +10,7 @@ class CardInformation extends Component {
             return (
                 <div className='card-detail-default'>
                     Select a card from your hand
-                    {console.log("container_CardInformation.js cannot find 'this.props.card'")}
-                    {console.log(this)} 
-                    {console.log("=====================================")}
+                    
                 </div>
             )
         }
@@ -20,7 +18,7 @@ class CardInformation extends Component {
         return (
         <div className='card-information row'>
                        
-
+            
             <ul>
                 <li className="card-detail-card-name">{this.props.card.cardInformation.name}</li>
                 <li className="card-detail-card-name">damage: {this.props.card.cardInformation.damage}</li>

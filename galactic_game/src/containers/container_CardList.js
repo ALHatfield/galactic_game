@@ -57,6 +57,7 @@ class CardList extends Component {
             
             <ul className='list-group col-sm-3'>
                 {this.renderList()}
+                {console.log(this)}
             </ul>
         )
     }
@@ -83,3 +84,4 @@ function mapDispatchToProps(dispatch) {
 // The container is component that is aware of the state that is contained by redux.
 // All functions maping data to props needs to be plugged into this connect function.
 export default connect(mapStateToProps, mapDispatchToProps)(CardList);
+
