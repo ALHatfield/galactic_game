@@ -38,7 +38,7 @@ class PlayerOneHand extends Component {
     
 
         // Generating the list of cards
-        return this.props.cards.map((card) => {
+        return this.props.playerOneDisplayCards.map((card) => {
             return (
                 
                 <li 
@@ -68,7 +68,7 @@ class PlayerOneHand extends Component {
 function mapStateToProps(state) {
     // What ever is returned will show up as props inside of CardList
     return {
-        cards: state.cards
+        playerOneDisplayCards: state.playerOneDisplayCards
     };
 }
 
