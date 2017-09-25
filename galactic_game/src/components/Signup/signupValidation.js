@@ -1,6 +1,8 @@
 import Validator from 'validator';
 import isEmpty from 'lodash/isEmpty'
 
+
+//validate sign up form
 export default function validateInput(data){
     let errors = {};
 
