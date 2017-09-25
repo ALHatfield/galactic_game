@@ -7,14 +7,7 @@ import { displayCards } from '../actions/action_displayCards';
 
 class PlayerOnePlayArea extends Component {
 
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         cards: []
-    //     }
-    // }    
-
-
+  
     renderPlayArea() {
         // console.log(this.props.playAreaCards)
         return this.props.playAreaCards.map((card) => {
@@ -34,7 +27,7 @@ class PlayerOnePlayArea extends Component {
                 style={{'borderStyle': "solid","color":"purple", "fontSize":"20px",padding: "0px 0px 800px 0px"}} 
                 className="play-area col-sm-3"
                 onClick={() => console.log(this)}> 
-                Play Areadfdf
+                Play Area
                 
                 </ul>
             )
