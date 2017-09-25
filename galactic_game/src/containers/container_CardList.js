@@ -41,7 +41,9 @@ class CardList extends Component {
                 
                 <li 
                     key={card.name} // unique ID
+                    
                     onClick={() => this.props.selectCard(card)} //action_SelectCard
+                    
                     onMouseEnter={() => console.log('mouse hover')}> 
 
                     <img className="expand-on-hover" height="50%" width="50%" alt="" src={card.image}/>
@@ -55,7 +57,7 @@ class CardList extends Component {
     render() {
         return (
             
-            <ul className='list-group col-sm-3'>
+            <ul className='cardDisplay list-group col-xs-12'>
                 {this.renderList()}
                 {console.log(this)}
             </ul>

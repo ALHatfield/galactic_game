@@ -26,8 +26,10 @@ class CardDetail extends Component {
             
 
             <div className="card-image">
-                <img height="500px" alt="" src={ this.props.card.selectCard.image }></img> 
-                <h2 className='card-detail-card-name'>{this.props.card.selectCard.name}<br />Damage: {this.props.card.selectCard.damage}</h2>
+                <h1 className="col-xs-2"></h1>
+                <img className='col-xs-6 displayImgDawg' height="500px" alt="" src={ this.props.card.selectCard.image }></img> 
+                <h1 className='col-xs-3 card-detail-card-name'>{this.props.card.selectCard.name}<br/><br/>Health: {this.props.card.selectCard.health}<br/><br/>Damage: {this.props.card.selectCard.damage}</h1>
+                <h1 className="col-xs-1"></h1>
                 
             </div>
             

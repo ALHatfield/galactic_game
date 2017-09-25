@@ -69,14 +69,14 @@
 }
 
 .card-detail-default {
-  color: white;
+  color: gold;
   font-size: 40px;
 
 }
 
 .card-detail-card-name {
-  font-size: 20px;
-  color: white;
+  font-size: 40px;
+  color: gold;
 }
 
 .card-detail-card-damage {
@@ -96,4 +96,16 @@
 .hi {
   opacity: 50%;
   border: 3px solid purple;
+}
+.cardDisplay {
+  display: flex;
+  flex-direction: row;
+  width: 1725px;
+  height: 180px;
+}
+
+.displayImgDawg {
+  height: 30%;
+  width: 30%;
+  margin-left: 30px;
 }
