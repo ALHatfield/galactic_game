@@ -15,6 +15,7 @@ import CardInformation from './reducer_PlayerOneHandSelectedCard';
 import PlayerOnePlayAreaCards from './reducer_PlayerOnePlayAreaCards';
 
 // Player Two::
+import PlayerTwoDisplayCards from './reducer_PlayerTwoDisplayCards';
 // import playerTwoplayAreaCards from './reducer_PlayerTwoplayAreaCards';
 
 
@@ -30,9 +31,11 @@ const rootReducer = combineReducers({
     // Player One Reducers:
     playerOneDisplayCards: PlayerOneDisplayCards,
     cardInformation: CardInformation,
-    playerOnePlayAreaCards: PlayerOnePlayAreaCards
+    playerOnePlayAreaCards: PlayerOnePlayAreaCards,
+    
 
     // Player Two Reducers:
+    playerTwoDisplayCards: PlayerTwoDisplayCards
 
     // playerTwoplayAreaCards: PlayerTwoPlayAreaCards
 });

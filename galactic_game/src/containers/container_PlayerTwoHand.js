@@ -7,7 +7,7 @@ import { playerOneHandSelectCard } from '../actions/action_PlayerOneHandSelectCa
 class PlayerTwoHand extends Component {
 
     renderList() {
-        return this.props.cards.map((card) => {
+        return this.props.playerTwoDisplayCards.map((card) => {
             return (
                 <li 
                     key={card.name} 
@@ -36,7 +36,7 @@ class PlayerTwoHand extends Component {
 
 function mapStateToProps(state) {
     return {
-        cards: state.cards
+        playerTwoDisplayCards: state.playerTwoDisplayCards
     };
 }
  // map state to props
