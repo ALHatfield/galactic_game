@@ -16,11 +16,12 @@ class LoginForm extends React.Component {
             errors: {},
             isLoading: false,
             Redirect: false
-        };
+         };
 
         this.onSubmit = this.onSubmit.bind(this);
         this.onChange = this.onChange.bind(this);
     }
+
 //validate user using validateInput file
     isValid(){
         const {errors, isValid} = validateInput(this.state);
@@ -30,9 +31,11 @@ class LoginForm extends React.Component {
         }
         return isValid;
     }
+
 //submit user request
     onSubmit(e){
         e.preventDefault();
+        console.log(this.state);
 //valid user will log
         if(this.isValid()){
             console.log('data is valid');
@@ -40,7 +43,7 @@ class LoginForm extends React.Component {
             // if data is good, make server request
             this.props.login(this.state).then(
                 (res) => this.context.router.push('/'),
-                (err) => this.setState({ errors: err.data.errors, isLoading: false})
+                (err) => this.setState({ errors: err.response.data.errors, isLoading: false})
             );
         }
     }
