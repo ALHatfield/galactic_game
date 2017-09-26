@@ -1,7 +1,5 @@
 import axios from 'axios';
-import setAuthorizationToken from './setAuthorizationToken';
 import { SET_CURRENT_USER } from './actionTypes';
-import jwtDecode from "jwt-decode";
 
 
 export const setCurrentUser = (user) => {

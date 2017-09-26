@@ -11,8 +11,8 @@ class LandingPage extends Component {
 
                 {/* BACKGROUND IMAGE */}
                 <section>
-                    <div id="parallax-1" class="parallax">
-                        <div class="title" class="first">{ <video autoPlay={true} loop id="bgvid" width="100%" height="100%">
+                    <div id="parallax-1" className="parallax">
+                        <div className="title" className="first">{ <video autoPlay={true} loop id="bgvid" width="100%" height="100%">
             <source src={ bgEarthHorizon } type="video/mp4">  
             </source>
           </video> }</div>
@@ -20,15 +20,15 @@ class LandingPage extends Component {
                 </section>
         
                 {/* SCROLLING CONTENT SECTION */}
-                <section class="scrolling-content">
-                    <div class="content
+                <section className="scrolling-content">
+                    <div className="content
                     col-sm-4 col-sm-offset-1
                     col-md-4 col-md-offset-1
                     col-lg-4 col-lg-offset-1">
                     
 
                         
-                        <div class="row content nowrap">	
+                        <div className="row content nowrap">	
                             
 
                         </div>
@@ -40,17 +40,17 @@ class LandingPage extends Component {
         
                 {/* BACKGROUND IMAGE */}
                 <section>
-                    <div id="parallax-2" class="parallax">
-                        <div class="title">{ <img id='bg-image' height='100%'  width='100%' src={bgEarthHorizon}/> }</div>
+                    <div id="parallax-2" className="parallax">
+                        <div className="title">{ <img id='bg-image' height='100%'  width='100%' src={bgEarthHorizon}/> }</div>
                     </div>
                 </section>
         
                 {/* SCROLLING CONTENT SECTION*/}
-                <section class="scrolling-content"></section>
+                <section className="scrolling-content"></section>
         
                 {/* BACKGROUND IMAGE*/}
-                <section id="parallax-3" class="parallax">
-                    <div class="title"></div>
+                <section id="parallax-3" className="parallax">
+                    <div className="title"></div>
                 </section>
     
             </div>
