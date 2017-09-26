@@ -24,6 +24,8 @@ class LoginForm extends React.Component {
 
 //validate user using validateInput file
     isValid(){
+        const email = encodeURIComponent(this.state.email);
+        const password = encodeURIComponent(this.state.password);
         const {errors, isValid} = validateInput(this.state);
 
         if(!isValid){

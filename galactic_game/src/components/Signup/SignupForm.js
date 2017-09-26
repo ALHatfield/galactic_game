@@ -32,6 +32,8 @@ class SignupForm extends React.Component {
   }
 //Validate user input using validateInput file
   isValid() {
+    const email = encodeURIComponent(this.state.email);
+    const password = encodeURIComponent(this.state.password);
     const { errors, isValid} = validateInput(this.state);
 
     if (!isValid) {
