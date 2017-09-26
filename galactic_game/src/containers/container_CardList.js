@@ -55,7 +55,7 @@ class CardList extends Component {
     render() {
         return (
             
-            <ul className='list-group col-sm-3'>
+            <ul className='cardDisplay list-group col-sm-3'>
                 {console.log("card gallery")}
                 {console.log(this)}
                 {this.renderList()}
