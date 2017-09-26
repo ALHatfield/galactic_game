@@ -95,6 +95,9 @@ class GameBoard extends Component {
             </source>
           </video>
           <div className='row'>
+            <h1 style={{'color':'yellow'}}>Select a card from your hand</h1>
+          </div>
+          <div className='row'>
             <PlayerOneHand />       
             <PlayerOnePlayArea />
             <PlayerTwoPlayArea />
@@ -122,9 +125,10 @@ class GameBoard extends Component {
           </video>
 
           <div className='card-information row'>
-            <li></li>
             <li className="card-detail-card-name">{this.props.card.cardInformation.name}</li>
             <li className="card-detail-card-name">damage: {this.props.card.cardInformation.damage}</li>
+            <li className="card-detail-card-name">{this.props.card.cardInformation.player}</li>
+            
           </div>
           
           <br style={{"color":"white", "height":"22px"}}/> 

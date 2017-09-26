@@ -9,7 +9,6 @@ class CardInformation extends Component {
         if (!this.props.card) {
             return (
                 <div className='card-detail-default'>
-                    Select a card from your hand
                     
                 </div>
             )
@@ -23,7 +22,7 @@ class CardInformation extends Component {
                 <li className="card-detail-card-name">{this.props.card.cardInformation.name}</li>
                 <li className="card-detail-card-name">damage: {this.props.card.cardInformation.damage}</li>
             </ul>
-
+     
             
                 
         

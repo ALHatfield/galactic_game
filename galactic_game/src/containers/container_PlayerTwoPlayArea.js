@@ -7,7 +7,7 @@ import { PlayerTwoDisplayCards } from '../actions/action_PlayerTwoDisplayCards.j
 class PlayerTwoPlayArea extends Component {
 
     renderPlayArea() {
-        return this.props.playerTwoplayAreaCards.map((card)=> {
+        return this.props.playerTwoPlayAreaCards.map((card)=> {
             return (
                 <li key={card.name}>
                     <img width="40%" src={card.image}/>
@@ -24,7 +24,9 @@ class PlayerTwoPlayArea extends Component {
                 <ul
                     style={{'borderStyle': "solid","color":"yellowgreen", "fontSize":"20px",padding: "0px 0px 800px 0px"}} 
                     className="play-area col-sm-3"
-                    onClick={() => console.log(this)}>
+                    onClick={() => console.log(this) }
+                    onMouseLeave={() => console.log(this)}>
+                    Player Two
                 </ul>
                 
             )
@@ -32,9 +34,11 @@ class PlayerTwoPlayArea extends Component {
 
         return(
                 <ul
-                    style={{'borderStyle': "solid","color":"yellowgreen", "fontSize":"20px",padding: "0px 0px 800px 0px"}} 
-                    className="play-area col-sm-3"
-                    onClick={() => console.log(this)}>
+                style={{'borderStyle': "solid","color":"yellowgreen", "fontSize":"20px",padding: "0px 0px 800px 0px"}} 
+                className="play-area col-sm-3"
+                onClick={() => this.props.PlayerTwoDisplayCards(this.props.card.playerTwoCardInformation) }>
+                    Player Two
+                    {this.renderPlayArea()}
                 </ul> 
         )
     }
@@ -42,13 +46,13 @@ class PlayerTwoPlayArea extends Component {
 
 function mapStateToProps(state) {
     return {
-        card: state.cardInformation,
-        playerTwoPlayAreaCards: state.PlayerTwoPlayAreaCards
+        card: state.playerTwoCardInformation,
+        playerTwoPlayAreaCards: state.playerTwoPlayAreaCards
     };
 }
 
 function mapDispatchToProps(dispatch){
-    return bindActionCreators({ playerTwoDisplayCards: PlayerTwoDisplayCards}, dispatch)
+    return bindActionCreators({ PlayerTwoDisplayCards: PlayerTwoDisplayCards}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerTwoPlayArea);
