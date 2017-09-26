@@ -7,17 +7,10 @@ import { displayCards } from '../actions/action_displayCards';
 
 class PlayerOnePlayArea extends Component {
 
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         cards: []
-    //     }
-    // }    
-
-
+  
     renderPlayArea() {
         // console.log(this.props.playAreaCards)
-        return this.props.playAreaCards.map((card) => {
+        return this.props.playerOnePlayAreaCards.map((card) => {
             return (
                 <li key={card.name}>
                     <img width="40%" src={card.image}/>
@@ -34,7 +27,7 @@ class PlayerOnePlayArea extends Component {
                 style={{'borderStyle': "solid","color":"purple", "fontSize":"20px",padding: "0px 0px 800px 0px"}} 
                 className="play-area col-sm-3"
                 onClick={() => console.log(this)}> 
-                Play Areadfdf
+                Player One
                 
                 </ul>
             )
@@ -46,14 +39,11 @@ class PlayerOnePlayArea extends Component {
 
         return(
             <ul 
-                style={{'borderStyle': "solid","color":"purple", "fontSize":"20px",padding: "0px 0px 800px 0px"}} 
-                className="play-area col-sm-3"
-                onClick={() => this.props.displayCards(this.props.card.cardInformation)}> 
-                
-                Play Area
+            style={{'borderStyle': "solid","color":"purple", "fontSize":"20px",padding: "0px 0px 800px 0px"}} 
+            className="play-area col-sm-3"
+            onClick={() => this.props.displayCards(this.props.card.cardInformation)}> 
+                Player One
                 {this.renderPlayArea()}
-                
-                
             </ul>
         )
     }
@@ -64,7 +54,7 @@ function mapStateToProps(state) {
     // What ever is returned will show up as props inside of CardList
     return {
         card: state.cardInformation,
-        playAreaCards: state.playerOnePlayAreaCards
+        playerOnePlayAreaCards: state.playerOnePlayAreaCards
     };
 }
 

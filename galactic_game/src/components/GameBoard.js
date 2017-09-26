@@ -5,6 +5,10 @@ import bgVideo from '../assets/Background_08.mp4';              // Background Vi
 
 import PlayerOneHand from '../containers/container_PlayerOneHand'; // CardList component
 import PlayerOnePlayArea from '../containers/container_PlayerOnePlayArea';
+
+import PlayerTwoHand from '../containers/container_PlayerTwoHand';
+import PlayerTwoPlayArea from '../containers/container_PlayerTwoPlayArea';
+
 import CardInformation from '../containers/container_CardInformation'; // ~~~~~~~~~~~~~~~~~~~~~CHANGE THIS TO CARD INFO CONTAINER ######################################
 import CardImageInformation from '../containers/container_CardImageInformation';
 import Navbar from "./Navbar/Navbar";
@@ -49,12 +53,12 @@ import { connect } from 'react-redux'; // This is the glue that connects react t
 // }
 
 class GameBoard extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      playerOne_cardsInPlay: []
-    }
-  }
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     playerOne_cardsInPlay: []
+  //   }
+  // }
 
 
   // handleClick (event) {
@@ -91,8 +95,13 @@ class GameBoard extends Component {
             </source>
           </video>
           <div className='row'>
+            <h1 style={{'color':'yellow'}}>Select a card from your hand</h1>
+          </div>
+          <div className='row'>
             <PlayerOneHand />       
             <PlayerOnePlayArea />
+            <PlayerTwoPlayArea />
+            <PlayerTwoHand />
           </div>
         </div>  
       </div>
@@ -116,9 +125,10 @@ class GameBoard extends Component {
           </video>
 
           <div className='card-information row'>
-            <li></li>
             <li className="card-detail-card-name">{this.props.card.cardInformation.name}</li>
             <li className="card-detail-card-name">damage: {this.props.card.cardInformation.damage}</li>
+            <li className="card-detail-card-name">{this.props.card.cardInformation.player}</li>
+            
           </div>
           
           <br style={{"color":"white", "height":"22px"}}/> 
@@ -126,6 +136,8 @@ class GameBoard extends Component {
           <div className='row'>
             <PlayerOneHand />       
             <PlayerOnePlayArea />
+            <PlayerTwoPlayArea />
+            <PlayerTwoHand />
             
           </div>
           

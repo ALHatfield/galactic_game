@@ -38,14 +38,13 @@ class PlayerOneHand extends Component {
     
 
         // Generating the list of cards
-        return this.props.cards.map((card) => {
+        return this.props.playerOneDisplayCards.map((card) => {
             return (
                 
                 <li 
                     key={card.name} // unique ID
                     // onClick={() => this.props.selectCard(card)} //action_SelectCard
-                    onClick={() => this.props.playerOneHandSelectCard(card)}
-                    onMouseEnter={() => console.log('mouse hover')}> 
+                    onClick={() => this.props.playerOneHandSelectCard(card)}> 
             
                     <img className="expand-on-hover" height="50%" width="50%" alt="" src={card.image}/>
                 </li>
@@ -68,7 +67,7 @@ class PlayerOneHand extends Component {
 function mapStateToProps(state) {
     // What ever is returned will show up as props inside of CardList
     return {
-        cards: state.cards
+        playerOneDisplayCards: state.playerOneDisplayCards
     };
 }
 
