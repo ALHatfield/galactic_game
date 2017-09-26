@@ -53,7 +53,7 @@ class LoginForm extends React.Component {
     }
 
     render(){
-        const {errors, email, password, isLoading} = this.state;
+        const {errors, identifier, password, isLoading} = this.state;
         return (
           <div>
             
@@ -65,10 +65,10 @@ class LoginForm extends React.Component {
 
                 { errors.form && <div className='alert alert-danger'>{errors.form}</div>}
                 <TextFieldInput
-                    field='email'
-                    label='email'
-                    value={email}
-                    error={errors.email}
+                    field='identifier'
+                    label='Username/Email'
+                    value={identifier}
+                    error={errors.identifier}
                     onChange={this.onChange}
                 />
 
