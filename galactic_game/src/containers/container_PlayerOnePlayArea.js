@@ -21,8 +21,7 @@ class PlayerOnePlayArea extends Component {
                 <ul key={i}>
                     <img width="40%" src={card.image}/>
                     <button onClick={() => {console.log('stuffffff'); this.props.PlayerOneAttacksPlayerTwo(card)}}>attack</button>
-                    {card.name}
-                    {card.health}
+                    <p className="card-health">Health: {card.health}</p>
                 </ul>
             );
         });

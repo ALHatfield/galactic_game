@@ -25,8 +25,8 @@ class PlayerTwoPlayArea extends Component {
                 <ul key={i}>
                     <button onClick={() => {console.log('stuffffff'); this.props.PlayerTwoAttacksPlayerOne(card)}}>attack</button>
                     <img width="40%" src={card.image}/>
-                    {card.name}
-                    {card.health}
+                    
+                    <p className="card-health">Health: {card.health}</p>
                 </ul>
             );
         });
