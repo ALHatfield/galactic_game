@@ -9,6 +9,9 @@ import PlayerOnePlayArea from '../containers/container_PlayerOnePlayArea';
 import PlayerTwoHand from '../containers/container_PlayerTwoHand';
 import PlayerTwoPlayArea from '../containers/container_PlayerTwoPlayArea';
 
+import BlankCardHand from './BlankCardHand';
+
+
 import CardInformation from '../containers/container_CardInformation'; // ~~~~~~~~~~~~~~~~~~~~~CHANGE THIS TO CARD INFO CONTAINER ######################################
 import CardImageInformation from '../containers/container_CardImageInformation';
 import Navbar from "./Navbar/Navbar";
@@ -40,9 +43,10 @@ class GameBoard extends Component {
             <p style={{'color':'orange', 'font-size':'20px'}}> ̿̿ ̿̿ ̿'̿'\̵͇̿̿\з= ( ▀ ͜͞ʖ▀) =ε/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿</p>
           </div>
           <div className='row'>
-            <PlayerTwoHand />       
-            <PlayerTwoPlayArea />
+            <BlankCardHand />
             <PlayerOnePlayArea />
+            <PlayerTwoPlayArea />
+            <PlayerTwoHand /> 
             
             
           </div>
@@ -81,10 +85,10 @@ class GameBoard extends Component {
           <br style={{"color":"white", "height":"22px"}}/> 
 
           <div className='row'>
-            <PlayerTwoHand />       
-            <PlayerTwoPlayArea />
+            <BlankCardHand />
             <PlayerOnePlayArea />
-            
+            <PlayerTwoPlayArea />
+            <PlayerTwoHand /> 
             
           </div>
           
