@@ -94,6 +94,12 @@
   width: 70%;
   height: 70%;
 }
+
+.expand-on-hover-playerhand:hover {
+  opacity: 0.3;
+  width: 50%;
+  height: 50%;
+}
 .hi {
   opacity: 50%;
   border: 3px solid purple;

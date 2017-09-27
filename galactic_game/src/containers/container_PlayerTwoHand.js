@@ -16,7 +16,7 @@ class PlayerTwoHand extends Component {
                     >
             
                       
-                    <img className="expand-on-hover" height="50%" width="50%" alt="" src={card.image}/>
+                    <img className="expand-on-hover-playerhand" height="40%" width="40%" alt="" src={card.image}/>
                 </li>
                 
             );
