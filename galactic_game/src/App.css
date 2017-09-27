@@ -91,7 +91,8 @@
 
 .expand-on-hover:hover {
   opacity: 0.3;
-  width: 60%;
+  width: 70%;
+  height: 70%;
 }
 .hi {
   opacity: 50%;
