@@ -18,10 +18,12 @@ class PlayerOnePlayArea extends Component {
         // console.log(this.props.playAreaCards)
         return this.props.playerOnePlayAreaCards.map((card, i) => {
             return (
-                <li key={i}>
+                <ul key={i}>
                     <img width="40%" src={card.image}/>
                     <button onClick={() => {console.log('stuffffff'); this.props.PlayerOneAttacksPlayerTwo(card)}}>attack</button>
-                </li>
+                    {card.name}
+                    {card.health}
+                </ul>
             );
         });
     }

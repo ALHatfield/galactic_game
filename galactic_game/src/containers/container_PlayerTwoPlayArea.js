@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { PlayerTwoDisplayCards } from '../actions/action_PlayerTwoDisplayCards.js'
+import { PlayerTwoAttacksPlayerOne } from '../actions/action_PlayerTwoAttacksPlayerOne';
 
 
 
@@ -21,12 +22,12 @@ class PlayerTwoPlayArea extends Component {
     renderPlayArea(event) {
         return this.props.playerTwoPlayAreaCards.map((card, i)=> {
             return (
-                <li key={i}>
-                    <button onClick={() => { console.log(`clicking ${card.name}`)}}> attack</button>
+                <ul key={i}>
+                    <button onClick={() => {console.log('stuffffff'); this.props.PlayerTwoAttacksPlayerOne(card)}}>attack</button>
                     <img width="40%" src={card.image}/>
                     {card.name}
                     {card.health}
-                </li>
+                </ul>
             );
         });
     }
@@ -62,8 +63,15 @@ function mapStateToProps(state) {
     };
 }
 
-function mapDispatchToProps(dispatch){
-    return bindActionCreators({ PlayerTwoDisplayCards: PlayerTwoDisplayCards}, dispatch)
+function mapDispatchToProps(dispatch) {
+
+    return {
+        PlayerTwoDisplayCards: card => dispatch(PlayerTwoDisplayCards(card)),
+        PlayerTwoAttacksPlayerOne: card => dispatch(PlayerTwoAttacksPlayerOne(card))
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerTwoPlayArea);
+
+
+
