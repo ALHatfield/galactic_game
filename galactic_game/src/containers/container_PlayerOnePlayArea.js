@@ -3,6 +3,7 @@ import { connect } from 'react-redux'; // This is the glue that connects react t
 import { bindActionCreators } from 'redux'; // allows our action to flow through our reducers
 
 import { displayCards } from '../actions/action_displayCards';
+import { PlayerOneAttacksPlayerTwo } from '../actions/action_PlayerOneAttacksPlayerTwo';
 
 
 class PlayerOnePlayArea extends Component {
@@ -19,7 +20,7 @@ class PlayerOnePlayArea extends Component {
             return (
                 <li key={i}>
                     <img width="40%" src={card.image}/>
-                    <button onClick={() => { console.log(`clicking ${card.name}`)}}>attack</button>
+                    <button onClick={() => PlayerOneAttacksPlayerTwo(card)}>attack</button>
                 </li>
             );
         });
@@ -62,7 +63,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     // Whenever selectCard is called, the result should be passed to all our reducers.
     // The select Card action gets passed to the dispatch function
-    return bindActionCreators({ displayCards: displayCards }, dispatch)
+    return bindActionCreators({ displayCards: displayCards, PlayerOneAttacksPlayerTwo: PlayerOneAttacksPlayerTwo}, dispatch)
 }
 
 

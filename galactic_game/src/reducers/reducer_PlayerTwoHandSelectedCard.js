@@ -10,3 +10,4 @@ export default function(state = {cardInformation: null}, action) {
             return state
     }
 }
+
