@@ -20,7 +20,7 @@ class PlayerOnePlayArea extends Component {
             return (
                 <li key={i}>
                     <img width="40%" src={card.image}/>
-                    <button onClick={() => PlayerOneAttacksPlayerTwo(card)}>attack</button>
+                    <button onClick={() => {console.log('stuffffff'); this.props.PlayerOneAttacksPlayerTwo(card)}}>attack</button>
                 </li>
             );
         });
@@ -63,7 +63,12 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     // Whenever selectCard is called, the result should be passed to all our reducers.
     // The select Card action gets passed to the dispatch function
-    return bindActionCreators({ displayCards: displayCards, PlayerOneAttacksPlayerTwo: PlayerOneAttacksPlayerTwo}, dispatch)
+    // return bindActionCreators({ displayCards: displayCards, PlayerOneAttacksPlayerTwo: PlayerOneAttacksPlayerTwo}, dispatch)
+
+    return {
+        displayCards: card => dispatch(displayCards(card)),
+        PlayerOneAttacksPlayerTwo: card => dispatch(PlayerOneAttacksPlayerTwo(card))
+    }
 }
 
 
