@@ -37,6 +37,7 @@ class GameBoard extends Component {
           </video>
           <div className='row'>
             <h1 style={{'color':'yellow'}}>Select a card from your hand</h1>
+            <p style={{'color':'orange', 'font-size':'20px'}}> ̿̿ ̿̿ ̿'̿'\̵͇̿̿\з= ( ▀ ͜͞ʖ▀) =ε/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿</p>
           </div>
           <div className='row'>
             <PlayerTwoHand />       
@@ -64,9 +65,14 @@ class GameBoard extends Component {
           </video>
 
           <div className='card-information row'>
-            <li className="card-detail-card-name">{this.props.card.playerTwoCardInformation.name}</li>
-            <li className="card-detail-card-name">damage: {this.props.card.playerTwoCardInformation.damage}</li>
-            <li className="card-detail-card-name">{this.props.card.playerTwoCardInformation.player}</li>
+           
+            <div>
+              <div className="card-detail-card-name">{this.props.card.playerTwoCardInformation.sprite}</div>
+              <div className="card-detail-card-name">{this.props.card.playerTwoCardInformation.name}</div>
+              <div className="card-detail-card-name">damage: {this.props.card.playerTwoCardInformation.damage}</div>
+              <div className="card-detail-card-name">health: {this.props.card.playerTwoCardInformation.health}</div>
+            </div>
+            
             
           </div>
 

@@ -33,28 +33,32 @@ export default function (state = [
         damage: 2,
         health: 15,
         image: require('../assets/PlasmaBowman.png'),
-        player: 'PLAYER_ONE'
+        player: 'PLAYER_ONE',
+        sprite: 'ʕ•ᴥ•ʔ'
     },      
     { 
         name: 'Roseroot Vertebrate',  // 1
         damage: 0,
         health: 6,
         image: require('../assets/RoserootVertebrate.png'),
-        player: 'PLAYER_ONE'
+        player: 'PLAYER_ONE',
+        sprite: '༼ つ ◕_◕ ༽つ'
     },  
     { 
         name: 'Omnigo Scrapper',               // 2
         damage: 1,
         health: 8,
         image: require('../assets/OmnigoScrapper.png'),
-        player: 'PLAYER_ONE'
+        player: 'PLAYER_ONE',
+        sprite: '(ง ͠° ͟ل͜ ͡°)ง'
     },                     
     {
         name: 'Atlas Drill',        // 3
         damage: 3,
         health: 10,
         image: require('../assets/AtlasDrill.png'),
-        player: 'PLAYER_ONE'
+        player: 'PLAYER_ONE',
+        sprite: '﴾͡๏̯͡๏﴿ ORLY?'
     }          
 ], action) {
 switch(action.type) {

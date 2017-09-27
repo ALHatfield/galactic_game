@@ -65,11 +65,17 @@ class GameBoard extends Component {
           </video>
 
           <div className='card-information row'>
-            <li className="card-detail-card-name">{this.props.card.cardInformation.name}</li>
-            <li className="card-detail-card-name">damage: {this.props.card.cardInformation.damage}</li>
-            <li className="card-detail-card-name">{this.props.card.cardInformation.player}</li>
-            
+          
+
+          <div>
+            <div className="card-detail-card-name">{this.props.card.cardInformation.sprite}</div>
+            <div className="card-detail-card-name">{this.props.card.cardInformation.name}</div>
+            <div className="card-detail-card-name">damage: {this.props.card.cardInformation.damage}</div>
+            <div className="card-detail-card-name">health: {this.props.card.cardInformation.health}</div>
           </div>
+          
+          
+        </div>
 
 
           
