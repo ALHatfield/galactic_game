@@ -11,12 +11,12 @@ export default class BlankCardHand extends Component {
     // Renders the list
     render() {
         return (
-            <ul className='list-group col-sm-3'>
-                
-                <li>
-                    <img height="50%" width="50%" alt="blank card" src="blank_card.png"/>
-                </li>
-            </ul>
+            <div className='list-group col-sm-3'>
+                <img height="50%" width="50%" src="../assets/blank_card.png"/>
+                <img height="50%" width="50%" src="../assets/blank_card.png"/>
+                <img height="50%" width="50%" src="../assets/blank_card.png"/>
+                <img height="50%" width="50%" src="../assets/blank_card.png"/>
+            </div>
         )
     }
 }

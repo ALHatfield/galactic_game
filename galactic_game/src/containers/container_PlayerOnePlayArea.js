@@ -41,7 +41,7 @@ class PlayerOnePlayArea extends Component {
         
         return(
             <ul 
-            style={{'borderStyle': "solid","color":"purple", "fontSize":"20px",padding: "0px 0px 800px 0px"}} 
+            style={{'borderStyle': "solid","color":"blueviolet", "fontSize":"20px",padding: "0px 0px 800px 0px"}} 
             className="play-area col-sm-3"
             onClick={this.handlePlayAreaClick}> 
                 Player One
