@@ -7,41 +7,41 @@ import { displayCards } from '../actions/action_displayCards';
 
 class PlayerOnePlayArea extends Component {
 
+    constructor(props) {
+        super(props);
+
+        this.handlePlayAreaClick = this.handlePlayAreaClick.bind(this);
+    }
   
-    renderPlayArea() {
+    renderPlayArea(event) {
         // console.log(this.props.playAreaCards)
-        return this.props.playerOnePlayAreaCards.map((card) => {
+        return this.props.playerOnePlayAreaCards.map((card, i) => {
             return (
-                <li key={card.name}>
+                <li key={i}>
                     <img width="40%" src={card.image}/>
+                    <button onClick={() => { console.log(`clicking ${card.name}`)}}>attack</button>
                 </li>
             );
         });
     }
 
+    handlePlayAreaClick() {
+        if(!this.props.card.cardInformation) {
+            return;
+        }
+        this.props.displayCards(this.props.card.cardInformation);
+    }
+
     render() {
         console.log(this.props)
-        if (!this.props.card) {
-            return (
-                <ul 
-                style={{'borderStyle': "solid","color":"purple", "fontSize":"20px",padding: "0px 0px 800px 0px"}} 
-                className="play-area col-sm-3"
-                onClick={() => console.log(this)}> 
-                Player One
-                
-                </ul>
-            )
-        }
-
 
         // { typeof this.props.playAreaCards.card !== 'undefined' ? this.props.playAreaCards.card.name : null}
         
-
         return(
             <ul 
             style={{'borderStyle': "solid","color":"purple", "fontSize":"20px",padding: "0px 0px 800px 0px"}} 
             className="play-area col-sm-3"
-            onClick={() => this.props.displayCards(this.props.card.cardInformation)}> 
+            onClick={this.handlePlayAreaClick}> 
                 Player One
                 {this.renderPlayArea()}
             </ul>
