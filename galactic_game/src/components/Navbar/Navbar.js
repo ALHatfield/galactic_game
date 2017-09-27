@@ -32,6 +32,8 @@ class Navbar extends React.Component {
             <li><Link to="/cardgallery">Card Gallery</Link></li>
             <li><Link to="/game">Game</Link></li>
             <li><Link to="/page2">Page 2</Link></li>
+            <li><Link to="/game-board-player-one">Player One</Link></li>
+            <li><Link to="/game-board-player-two">Player Two</Link></li>
           </ul>
           <ul className="nav navbar-nav navbar-right">
             <li><Link to="/signup"><span className="glyphicon glyphicon-user"></span> Sign Up</Link></li>
