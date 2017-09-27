@@ -24,7 +24,7 @@ class GameBoard extends Component {
 
     var cardArray = [];
 
-    if (!this.props.card.cardInformation) {
+    if (!this.props.card.playerTwoCardInformation) {
       return (
         <div className="App">
         <div className="out-video">
@@ -64,9 +64,9 @@ class GameBoard extends Component {
           </video>
 
           <div className='card-information row'>
-            <li className="card-detail-card-name">{this.props.card.cardInformation.name}</li>
-            <li className="card-detail-card-name">damage: {this.props.card.cardInformation.damage}</li>
-            <li className="card-detail-card-name">{this.props.card.cardInformation.player}</li>
+            <li className="card-detail-card-name">{this.props.card.playerTwoCardInformation.name}</li>
+            <li className="card-detail-card-name">damage: {this.props.card.playerTwoCardInformation.damage}</li>
+            <li className="card-detail-card-name">{this.props.card.playerTwoCardInformation.player}</li>
             
           </div>
 
@@ -93,8 +93,7 @@ class GameBoard extends Component {
 //        card: state.cardInformation
 function mapStateToProps(state) {
   return {
-    card: state.cardInformation,
-    cardp2: state.playerTwoCardInformation
+    card: state.playerTwoCardInformation
 
   }
 }
