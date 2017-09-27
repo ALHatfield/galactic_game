@@ -50,6 +50,8 @@ class CardGallery extends Component {
 
           <div className='row'>
             <CardList />
+          </div>
+          <div>
             <CardDetail />
           </div>
         </div>  
