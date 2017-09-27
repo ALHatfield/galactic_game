@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'; // This is the glue that connects react to redux
 import { bindActionCreators } from 'redux'; // allows our action to flow through our reducers
-import { playerOneHandSelectCard } from '../actions/action_PlayerOneHandSelectCard';
+import { playerTwoHandSelectCard } from '../actions/action_PlayerTwoHandSelectCard';
 
 
 class PlayerTwoHand extends Component {
@@ -11,7 +11,7 @@ class PlayerTwoHand extends Component {
             return (
                 <li 
                     key={card.name} 
-                    onClick={()=> this.props.playerOneHandSelectCard(card)} 
+                    onClick={()=> this.props.playerTwoHandSelectCard(card)} 
                     /* onMouseEnter={() => console.log('mouse hover')} */
                     >
             
@@ -42,7 +42,7 @@ function mapStateToProps(state) {
  // map state to props
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ playerOneHandSelectCard: playerOneHandSelectCard }, dispatch)
+    return bindActionCreators({ playerTwoHandSelectCard: playerTwoHandSelectCard }, dispatch)
 }
     // map dispatch to props
     //      bind action creators

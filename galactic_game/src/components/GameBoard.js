@@ -83,7 +83,7 @@ class GameBoard extends Component {
     // }
 
     // if statement // Handle undefined
-    if (!this.props.card) {
+    if (!this.props.card.cardInformation || !this.props.cardp2.playerTwoCardInformation) {
       return (
         <div className="App">
         <div className="out-video">
@@ -94,6 +94,9 @@ class GameBoard extends Component {
             <source src={ bgVideo } type="video/mp4">  
             </source>
           </video>
+          <div className='row'>
+            <h1 style={{'color':'yellow'}}>Select a card from your hand</h1>
+          </div>
           <div className='row'>
             <PlayerOneHand />       
             <PlayerOnePlayArea />
@@ -107,24 +110,28 @@ class GameBoard extends Component {
     return (
       <div className="App">
 
-      
         <div className="out-video">
 
-          
           <div>
             <Navbar />
           </div>
           
-        
           <video autoPlay={true} loop id="bgvid" width="100%" height="100%">
             <source src={ bgVideo } type="video/mp4">  
             </source>
           </video>
 
           <div className='card-information row'>
-            <li></li>
             <li className="card-detail-card-name">{this.props.card.cardInformation.name}</li>
             <li className="card-detail-card-name">damage: {this.props.card.cardInformation.damage}</li>
+            <li className="card-detail-card-name">{this.props.card.cardInformation.player}</li>
+            
+          </div>
+
+          <div>
+            <li>{this.props.cardp2.playerTwoCardInformation.name}</li>
+            <li>{this.props.cardp2.playerTwoCardInformation.damage}</li>
+            <li>{this.props.cardp2.playerTwoCardInformation.player}</li>
           </div>
           
           <br style={{"color":"white", "height":"22px"}}/> 
@@ -149,6 +156,7 @@ class GameBoard extends Component {
 function mapStateToProps(state) {
   return {
     card: state.cardInformation,
+    cardp2: state.playerTwoCardInformation
 
   }
 }

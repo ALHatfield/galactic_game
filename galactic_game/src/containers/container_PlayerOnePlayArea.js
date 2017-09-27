@@ -3,50 +3,50 @@ import { connect } from 'react-redux'; // This is the glue that connects react t
 import { bindActionCreators } from 'redux'; // allows our action to flow through our reducers
 
 import { displayCards } from '../actions/action_displayCards';
+import { PlayerOneAttacksPlayerTwo } from '../actions/action_PlayerOneAttacksPlayerTwo';
 
 
 class PlayerOnePlayArea extends Component {
 
+    constructor(props) {
+        super(props);
+
+        this.handlePlayAreaClick = this.handlePlayAreaClick.bind(this);
+    }
   
-    renderPlayArea() {
+    renderPlayArea(event) {
         // console.log(this.props.playAreaCards)
-        return this.props.playAreaCards.map((card) => {
+        return this.props.playerOnePlayAreaCards.map((card, i) => {
             return (
-                <li key={card.name}>
+                <ul key={i}>
                     <img width="40%" src={card.image}/>
-                </li>
+                    <button onClick={() => {console.log('stuffffff'); this.props.PlayerOneAttacksPlayerTwo(card)}}>attack</button>
+                    {card.name}
+                    {card.health}
+                </ul>
             );
         });
     }
 
+    handlePlayAreaClick() {
+        if(!this.props.card.cardInformation) {
+            return;
+        }
+        this.props.displayCards(this.props.card.cardInformation);
+    }
+
     render() {
         console.log(this.props)
-        if (!this.props.card) {
-            return (
-                <ul 
-                style={{'borderStyle': "solid","color":"purple", "fontSize":"20px",padding: "0px 0px 800px 0px"}} 
-                className="play-area col-sm-3"
-                onClick={() => console.log(this)}> 
-                Play Area
-                
-                </ul>
-            )
-        }
-
 
         // { typeof this.props.playAreaCards.card !== 'undefined' ? this.props.playAreaCards.card.name : null}
         
-
         return(
             <ul 
-                style={{'borderStyle': "solid","color":"purple", "fontSize":"20px",padding: "0px 0px 800px 0px"}} 
-                className="play-area col-sm-3"
-                onClick={() => this.props.displayCards(this.props.card.cardInformation)}> 
-                
-                Play Area
+            style={{'borderStyle': "solid","color":"purple", "fontSize":"20px",padding: "0px 0px 800px 0px"}} 
+            className="play-area col-sm-3"
+            onClick={this.handlePlayAreaClick}> 
+                Player One
                 {this.renderPlayArea()}
-                
-                
             </ul>
         )
     }
@@ -57,7 +57,7 @@ function mapStateToProps(state) {
     // What ever is returned will show up as props inside of CardList
     return {
         card: state.cardInformation,
-        playAreaCards: state.playerOnePlayAreaCards
+        playerOnePlayAreaCards: state.playerOnePlayAreaCards
     };
 }
 
@@ -65,7 +65,12 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     // Whenever selectCard is called, the result should be passed to all our reducers.
     // The select Card action gets passed to the dispatch function
-    return bindActionCreators({ displayCards: displayCards }, dispatch)
+    // return bindActionCreators({ displayCards: displayCards, PlayerOneAttacksPlayerTwo: PlayerOneAttacksPlayerTwo}, dispatch)
+
+    return {
+        displayCards: card => dispatch(displayCards(card)),
+        PlayerOneAttacksPlayerTwo: card => dispatch(PlayerOneAttacksPlayerTwo(card))
+    }
 }
 
 
