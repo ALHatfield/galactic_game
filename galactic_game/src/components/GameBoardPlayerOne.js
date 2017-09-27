@@ -87,7 +87,6 @@ class GameBoard extends Component {
             <PlayerTwoPlayArea />
             <BlankCardHand />
             
-            
           </div>
           
         </div>  
