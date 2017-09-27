@@ -1,12 +1,13 @@
 
 
 
-export default function(state = null, action) { 
+export default function(state = {cardInformation: null}, action) { 
     switch(action.type) {                                           //
         case 'PLAYER_ONE_HAND_SELECT_CARD':                         // if (action.type === 'CARD_SELECTED') // TRUE
             const {payload} = action;                               // const payload = action.payload;
             return Object.assign({}, state, {cardInformation: payload}) //
-
+        case 'PLAYER_ONE_DISPLAY_CARDS':
+            return Object.assign({}, state, {cardInformation: null})
         // case 'PLAYER_TWO_HAND_SELECT_CARD':
         //     const {payload} = action;                               // const payload = action.payload;
         //     return Object.assign({}, state, {cardInformation: payload})

@@ -8,6 +8,7 @@ import PlayerOnePlayArea from '../containers/container_PlayerOnePlayArea';
 
 import PlayerTwoHand from '../containers/container_PlayerTwoHand';
 import PlayerTwoPlayArea from '../containers/container_PlayerTwoPlayArea';
+import BlankCardHand from './BlankCardHand';
 
 import CardInformation from '../containers/container_CardInformation'; // ~~~~~~~~~~~~~~~~~~~~~CHANGE THIS TO CARD INFO CONTAINER ######################################
 import CardImageInformation from '../containers/container_CardImageInformation';
@@ -16,74 +17,15 @@ import Navbar from "./Navbar/Navbar";
 import { connect } from 'react-redux'; // This is the glue that connects react to redux
 
 
-// import {Deck} from './Deck'
-
-//
-// // @Dangerous
-// function example () {
-//   const deck = App._Deck
-
-//   // do shit with deck
-
-//   // manipulate however you want
-
-//   // return n ew state
-// }
-// //
-
-// // =========================================== // //
-// //     CLAUDIO'S JUNGLE JUICE FUNCTION         // //
-// // =========================================== // //
-// Array.prototype.shuffle = function() {
-//     var i = this.length,
-//             j,
-//             temp;
-
-//     while (--i > 0) {
-//         j = Math.floor(Math.random()*(i + 1));
-//         temp = this[j];
-//         this[j] = this[i];
-//         this[i] = temp;
-//     }
-//     return this;
-// }
-
-// renderList() {
-  // this.props.cards.shuffle();
-// }
 
 class GameBoard extends Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     playerOne_cardsInPlay: []
-  //   }
-  // }
 
-
-  // handleClick (event) {
-  //   event.preventDefault();
-
-  //   this.setState({activeCard: this.props.example })
-  // }
 
   render() {
 
     var cardArray = [];
-    // var targetCard = {this.props.card.cardInformation};
-    // var targetCard = {return(this.props.card.cardInformation).bind(this)};
 
-    
-
-    // pushCardsToState() {
-    //   cardArray = cardArray.push(targetCard);
-    //   this.setState = {
-    //     playerOne_cardsInPlay: cardArray
-    //   }
-    // }
-
-    // if statement // Handle undefined
-    if (!this.props.card.cardInformation || !this.props.cardp2.playerTwoCardInformation) {
+    if (!this.props.card.cardInformation) {
       return (
         <div className="App">
         <div className="out-video">
@@ -101,7 +43,8 @@ class GameBoard extends Component {
             <PlayerOneHand />       
             <PlayerOnePlayArea />
             <PlayerTwoPlayArea />
-            <PlayerTwoHand />
+            <BlankCardHand />
+            
           </div>
         </div>  
       </div>
@@ -128,11 +71,7 @@ class GameBoard extends Component {
             
           </div>
 
-          <div>
-            <li>{this.props.cardp2.playerTwoCardInformation.name}</li>
-            <li>{this.props.cardp2.playerTwoCardInformation.damage}</li>
-            <li>{this.props.cardp2.playerTwoCardInformation.player}</li>
-          </div>
+
           
           <br style={{"color":"white", "height":"22px"}}/> 
 
@@ -140,7 +79,7 @@ class GameBoard extends Component {
             <PlayerOneHand />       
             <PlayerOnePlayArea />
             <PlayerTwoPlayArea />
-            <PlayerTwoHand />
+            
             
           </div>
           

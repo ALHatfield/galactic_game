@@ -3,40 +3,52 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { PlayerTwoDisplayCards } from '../actions/action_PlayerTwoDisplayCards.js'
+import { PlayerTwoAttacksPlayerOne } from '../actions/action_PlayerTwoAttacksPlayerOne';
+
+
+
 
 class PlayerTwoPlayArea extends Component {
 
-    renderPlayArea() {
-        return this.props.playerTwoPlayAreaCards.map((card)=> {
+    constructor(props) {
+        super(props);
+
+        this.handlePlayAreaClick = this.handlePlayAreaClick.bind(this);
+    }
+
+
+
+
+    renderPlayArea(event) {
+        return this.props.playerTwoPlayAreaCards.map((card, i)=> {
             return (
-                <li key={card.name}>
+                <ul key={i}>
+                    <button onClick={() => {console.log('stuffffff'); this.props.PlayerTwoAttacksPlayerOne(card)}}>attack</button>
                     <img width="40%" src={card.image}/>
-                </li>
+                    {card.name}
+                    {card.health}
+                </ul>
             );
         });
     }
+    
+
+    handlePlayAreaClick() {
+        if(!this.props.card.playerTwoCardInformation) {
+            return;
+        }
+        this.props.PlayerTwoDisplayCards(this.props.card.playerTwoCardInformation);
+    }
+
 
     render() {
-        console.log('string')
         console.log(this.props)
-        if(!this.props.card) {
-            return(
-                <ul
-                    style={{'borderStyle': "solid","color":"yellowgreen", "fontSize":"20px",padding: "0px 0px 800px 0px"}} 
-                    className="play-area col-sm-3"
-                    onClick={() => console.log(this) }
-                    onMouseLeave={() => console.log(this)}>
-                    Player Two
-                </ul>
-                
-            )
-        }
 
         return(
                 <ul
                 style={{'borderStyle': "solid","color":"yellowgreen", "fontSize":"20px",padding: "0px 0px 800px 0px"}} 
                 className="play-area col-sm-3"
-                onClick={() => this.props.PlayerTwoDisplayCards(this.props.card.playerTwoCardInformation) }>
+                onClick={this.handlePlayAreaClick}>
                     Player Two
                     {this.renderPlayArea()}
                 </ul> 
@@ -51,8 +63,15 @@ function mapStateToProps(state) {
     };
 }
 
-function mapDispatchToProps(dispatch){
-    return bindActionCreators({ PlayerTwoDisplayCards: PlayerTwoDisplayCards}, dispatch)
+function mapDispatchToProps(dispatch) {
+
+    return {
+        PlayerTwoDisplayCards: card => dispatch(PlayerTwoDisplayCards(card)),
+        PlayerTwoAttacksPlayerOne: card => dispatch(PlayerTwoAttacksPlayerOne(card))
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerTwoPlayArea);
+
+
+
