@@ -9,7 +9,7 @@ export default function (state = [
     },      
     { 
         name: 'Roseroot Vertebrate',  // 1
-        damage: 0,
+        damage: 1,
         health: 6,
         image: require('../assets/RoserootVertebrate.png'),
         player: 'PLAYER_TWO',

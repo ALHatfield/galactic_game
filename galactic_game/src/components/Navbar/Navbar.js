@@ -28,10 +28,8 @@ class Navbar extends React.Component {
             </Link>
           </div>
           <ul className="nav navbar-nav">
-           <li><Link to="/home">Home</Link></li>
             <li><Link to="/cardgallery">Card Gallery</Link></li>
-            <li><Link to="/game">Game</Link></li>
-            <li><Link to="/page2">Page 2</Link></li>
+            <li><Link to="/game">Spectator Mode</Link></li>
             <li><Link to="/game-board-player-one">Player One</Link></li>
             <li><Link to="/game-board-player-two">Player Two</Link></li>
           </ul>

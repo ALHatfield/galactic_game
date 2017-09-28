@@ -13,7 +13,11 @@ class PlayerOnePlayArea extends Component {
 
         this.handlePlayAreaClick = this.handlePlayAreaClick.bind(this);
     }
+
+
   
+
+
     renderPlayArea(event) {
         // console.log(this.props.playAreaCards)
         return this.props.playerOnePlayAreaCards.map((card, i) => {
@@ -21,7 +25,7 @@ class PlayerOnePlayArea extends Component {
                 <ul key={i}>
                     <img width="40%" src={card.image}/>
                     <button onClick={() => {console.log('stuffffff'); this.props.PlayerOneAttacksPlayerTwo(card)}}>attack</button>
-                    <p className="card-health">Health: {card.health}</p>
+                    <p className="card-health">♥ {card.health}</p>
                 </ul>
             );
         });
