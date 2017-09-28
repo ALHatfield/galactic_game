@@ -5,7 +5,7 @@ const flashMessage = (state = {}, action = {}) => {
   switch(action.type) {
     case ADD_MESSAGE:
       return {
-        ...state,
+        state,
         [action.message.id]: {
           id: action.message.id,
           type: action.message.type,
