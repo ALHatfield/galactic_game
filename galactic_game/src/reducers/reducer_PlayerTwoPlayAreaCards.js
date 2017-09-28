@@ -11,10 +11,12 @@ export default function(state = [], action) {
         case 'PLAYER_ONE_ATTACKS_PLAYER_TWO':
 
             if(!state.length) {
-                return;
+                alert("THE GAME IS OVER");
+                return [];
             }
 
             if(state[0].health - action.damage < 0) {
+                
                 return state.filter((c,i) => i !== 0);
             } else {
                 return state.map((c,i) => {

@@ -26,7 +26,7 @@ class PlayerTwoPlayArea extends Component {
                     <button onClick={() => {console.log('stuffffff'); this.props.PlayerTwoAttacksPlayerOne(card)}}>attack</button>
                     <img width="40%" src={card.image}/>
                     
-                    <p className="card-health">♥ {card.health}</p>
+                    <p className="card-health"> {"♥".repeat(card.health)}</p>
                 </ul>
             );
         });
