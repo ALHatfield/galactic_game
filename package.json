@@ -1,0 +1,25 @@
+{
+  "name": "galactic_game",
+  "version": "1.0.0",
+  "main": "server,js",
+  "repository": "https://github.com/ALHatfield/galactic_game.git",
+  "author": "mdnurul <nurul.alam1@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon --exec babel-node -- server.js"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.0",
+    "mongoose": "^4.12.4",
+    "nodemon": "^1.12.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "validator": "^9.1.1"
+  }
+}

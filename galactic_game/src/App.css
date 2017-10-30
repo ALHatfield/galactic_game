@@ -2,14 +2,14 @@
   text-align: center;
 }
 
-.App-logo {
+/*.App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 900px;
   padding: 20px;
   color: white;
   z-index: 100;
@@ -23,7 +23,7 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
+*/
 .card-list {
   color: white;
   background-color: grey;
@@ -108,7 +108,7 @@
 .cardDisplay {
   display: flex;
   flex-direction: row;
-  width: 1725px;
+  width: 1400px;
   height: 180px;
 }
 

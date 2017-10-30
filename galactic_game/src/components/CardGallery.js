@@ -5,7 +5,7 @@ import bgVideo from '../assets/Background_08.mp4';              // Background Vi
 
 import CardList from '../containers/container_CardList'; // CardList component
 import CardDetail from '../containers/container_CardDetail';
-import Navbar from "./Navbar/Navbar";
+import Navbar from "./Navbar";
 
 // import {Deck} from './Deck'
 

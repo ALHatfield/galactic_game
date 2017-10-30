@@ -1,4 +1,4 @@
-export default function(state = [], action) {
+ export default function(state = [], action) {
     console.log('playarea')
     switch(action.type) {
         // action_displayCards 

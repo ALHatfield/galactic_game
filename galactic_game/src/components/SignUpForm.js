@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -9,7 +10,7 @@ const SignUpForm = ({
   onSubmit,
   onChange,
   errors,
-  user,
+  user
 }) => (
   <Card className="container">
     <form action="/" onSubmit={onSubmit}>
@@ -61,7 +62,7 @@ SignUpForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,
-  user: PropTypes.object.isRequiredl
+  user: PropTypes.object.isRequired
 };
 
 export default SignUpForm;

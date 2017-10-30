@@ -1,12 +1,12 @@
-import React, { PropTypes } from 'react';
-import SignUpForm from '../containers/SignUpForm';
+import React from 'react';
+import  PropTypes  from 'prop-types';
+import SignUpForm from '../components/SignUpForm';
+//import { Redirect } from "react-router-dom";
 
 class SignUpPage extends React.Component {
-  /**
-   * Class constructor.
-   */
-   constructor(props) {
-     super(props);
+  /** Class constructor.*/
+   constructor(props, context) {
+     super(props, context);
 
      // set the initial component state
      this.state = {
@@ -21,26 +21,8 @@ class SignUpPage extends React.Component {
      this.changeUser = this.changeUser.bind(this);
    }
 
-   /**
-    * Change the user object.
-    *
-    *@param {object} event - the Javascript event object
-    */
-    changeUser(event) {
-      const field = event.target.name;
-      const user = this.state.user;
-      user[field] = event.target.value;
-
-      this.setState({
-        user
-      });
-    }
-
-    /**
-    * Process the form
-    *
-    * @param {object} event - the Javascript event object
-    */
+   
+    /** Process the form, @param {object} event - the Javascript event object */
 
     processForm(event) {
       // prevent default action. in this case, action is the form submission event
@@ -61,31 +43,45 @@ class SignUpPage extends React.Component {
       xhr.addEventListener('load', () => {
         if (xhr.status === 200) {
           //success
-
+          console.log(xhr.response)
           //change the component-container state
-          this.setState({
-            errors: {}
-          });
+          this.setState({ errors: {} });
+          //set a message
+          localStorage.setItem("successMessage", xhr.response.message);
+          //redirect current route
 
-          console.log('The form is valid');
+          //<Redirect to="/login">
+          this.props.history.push("/login");
+
+          //console.log('The form is valid');
+           
         } else {
-          //failure
+          //on failure
 
-          const errors = xhr.response.errors ? xhr.response.errors : {};
+          const errors = xhr.response.errors? xhr.response.errors : {};
           errors.summary = xhr.response.message;
 
-          this.setState({
-            errors
-          });
+          this.setState({ errors });
         }
       });
       xhr.send(formData);
     }
 
-    /**
-    * Render the component.
-    */
+    /** Change the user object. @param {object} event - the JavaScript event object */
+  changeUser(event) {
+    const field = event.target.name;
+    const user = this.state.user;
+    user[field] = event.target.value;
+
+    this.setState({ user });
+  }
+
+
+
+    /** Render the component. */
+    
     render() {
+            
       return (
         <SignUpForm
           onSubmit={this.processForm}
@@ -95,6 +91,10 @@ class SignUpPage extends React.Component {
         />
       );
     }
+}
+
+SignUpPage.contextTypes = {
+  history: PropTypes.object.isrequired
 }
 
 export default SignUpPage;

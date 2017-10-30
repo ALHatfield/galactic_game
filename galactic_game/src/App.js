@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import {BrowserRouter, Route} from "react-router-dom";
-
-import SignUpPage from "./components/SignUpPage";
-import LoginPage from "./components/LoginPage";
-import Navbar from "./components/Navbar/Navbar";
-import Rules from "./components/Rules";
+import Auth from "./modules/Auth";
+import SignUpPage from "./containers/SignUpPage";
+import LoginPage from "./containers/LoginPage";
+import Navbar from "./components/Navbar";
+import HomePage from "./components/HomePage";
 import CardGallery from "./components/CardGallery";
 import Footer from "./components/Footer/Footer";
 import LandingPage from "./components/landingPage";
@@ -22,28 +22,26 @@ injectTapEventPlugin();
 class App extends React.Component {
   render() {
     return (
-      <MuiThemeProvider>
+    <MuiThemeProvider>
       <BrowserRouter>
-        <div className="container">
+        <div className="main-container">
 
           <Route path="/" render={(mathProps) => (
             <div>
               <Navbar {...mathProps}/>
-            </div>
-          )}
+            </div>)}
           />
           <Route exact path="/" component= { LandingPage } />
-          <Route path="/rules" component={Rules} />
+          <Route path="/home" component={HomePage} />
           <Route path="/cardgallery" component={CardGallery} />
           <Route path="/signup" component={SignUpPage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/game" component={GameBoard}  />
-          <Route path="/game-board-player-one" component={GameBoardPlayerOne} />
-          <Route path="/game-board-player-two" component={GameBoardPlayerTwo} />
-          <Footer />
+          <Route path="/player1" component={GameBoardPlayerOne} />
+          <Route path="/player2" component={GameBoardPlayerTwo} />
         </div>
       </BrowserRouter>
-      </MuiThemeProvider>
+    </MuiThemeProvider>
     );
   }
 }
