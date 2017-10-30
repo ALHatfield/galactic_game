@@ -7,7 +7,6 @@ import LoginPage from "./containers/LoginPage";
 import Navbar from "./components/Navbar";
 import HomePage from "./components/HomePage";
 import CardGallery from "./components/CardGallery";
-import Footer from "./components/Footer/Footer";
 import LandingPage from "./components/landingPage";
 import GameBoard from "./components/GameBoard";
 import GameBoardPlayerOne from "./components/GameBoardPlayerOne";
