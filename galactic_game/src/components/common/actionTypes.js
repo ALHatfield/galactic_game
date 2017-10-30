@@ -1,3 +1,0 @@
-export const ADD_MESSAGE = 'ADD_MESSAGE';
-export const REMOVE_MESSAGE = 'REMOVE_MESSAGE';
-export const SET_CURRENT_USER = 'SET_CURRENT_USER';

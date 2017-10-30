@@ -15,7 +15,7 @@ class PlayerOnePlayArea extends Component {
     }
 
 
-  
+   
 
 
     renderPlayArea(event) {

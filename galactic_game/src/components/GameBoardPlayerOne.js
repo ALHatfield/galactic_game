@@ -12,7 +12,7 @@ import BlankCardHand from './BlankCardHand';
 
 import CardInformation from '../containers/container_CardInformation'; // ~~~~~~~~~~~~~~~~~~~~~CHANGE THIS TO CARD INFO CONTAINER ######################################
 import CardImageInformation from '../containers/container_CardImageInformation';
-import Navbar from "./Navbar/Navbar";
+import Navbar from "./Navbar";
 
 import { connect } from 'react-redux'; // This is the glue that connects react to redux
 

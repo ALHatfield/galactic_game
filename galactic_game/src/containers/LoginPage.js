@@ -1,16 +1,28 @@
-import React, {PropTypes} from 'react';
-import LoginForm from '../containers/LoginForm.js';
+import React from 'react';
+import PropTypes from 'prop-types';
+import LoginForm from '../components/LoginForm.js';
+import Auth from "../modules/Auth";
+//import { Redirect } from "react-router-dom";
+//import { router} from "react-router-dom";
 
 class LoginPage extends React.Component {
 
-    /**
-   * Class constructor.
-   */
-    constructor(props) {
-        super(props);
+    /** Class constructor.*/
+    constructor(props, context) {
+        super(props, context);
+
+        const storedMessage = localStorage.getItem("successMessage");
+
+        let successMessage = '';
+
+        if (storedMessage) {
+            successMessage = storedMessage;
+            localStorage.removeItem("successMessage");
+        }
 
         // set the initial component state
         this.state = {
+            successMessage,
             errors: {},
             user: {
                 email: '',
@@ -22,11 +34,8 @@ class LoginPage extends React.Component {
         this.changeUser = this.changeUser.bind(this);
     }
 
-    /**
-   * Process the form.
-   *
-   * @param {object} event - the JavaScript event object
-   */
+    
+    /** Process the form. @param {object} event - the JavaScript event object */
     processForm(event) {
         // prevent default action. in this case, action is the form submission event
         event.preventDefault();
@@ -46,32 +55,28 @@ class LoginPage extends React.Component {
             //success
 
             //change the component-container state
-            this.setState({
-              errors: {}
-            });
-
-            console.log('The form is valid');
+            this.setState({ errors: {} });
+            //set a message
+         //localStorage.setItem("successMessage", xhr.response.message);
+            //Save the token
+            Auth.authenticateUser(xhr.response.token);
+            //change the current URL to /
+                         
+            this.props.history.push("/");
           } else {
-            //failure
-
-            //change the component state
+            //if failure, change the component state
             const errors = xhr.response.errors ? xhr.response.errors : {};
             errors.summary = xhr.response.message;
 
-            this.setState({
-              errors
-            });
+            this.setState({errors});
           }
         });
+
         xhr.send(formData);
 
       }
 
-    /**
-   * Change the user object.
-   *
-   * @param {object} event - the JavaScript event object
-   */
+    /** Change the user object. @param {object} event - the JavaScript event object */
     changeUser(event) {
         const field = event.target.name;
         const user = this.state.user;
@@ -80,19 +85,24 @@ class LoginPage extends React.Component {
         this.setState({user});
     }
 
-    /**
-   * Render the component.
-   */
+    /** Render the component. */
     render() {
         return (
-          <LoginForm onSubmit={this.processForm}
-          onChange={this.changeUser}
-          errors={this.state.errors}
-          user={this.state.user}
+        <div className="main-container">
+          <LoginForm 
+              onSubmit={this.processForm}
+              onChange={this.changeUser}
+              errors={this.state.errors}
+              successMessage={this.state.successMessage}
+              user={this.state.user}
           />
+        </div>
         );
     }
-
 }
+LoginPage.contextTypes = {
+  history: PropTypes.object.isRequired
+};
+
 
 export default LoginPage;
